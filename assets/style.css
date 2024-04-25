@@ -271,7 +271,6 @@ body, html {
 
 .left-half {
     flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-    padding: 20px; /* Добавляем отступы вокруг текстового контента */
     box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
 }
 
@@ -288,9 +287,17 @@ body, html {
 
 .left-half-main {
     font-family: 'Raleway', sans-serif;
-    font-size: 24px; /* Изначальный размер шрифта */
-    text-align: center;
-    line-height: 72px;
+    font-size: 32px; /* Изначальный размер шрифта */
+    text-align: left;
+    line-height: 32px;
+    max-width: 600px;
+    flex: 1; /* Распределение пространства равномерно между дочерними элементами */
+    margin-top: 20px; /* Добавляем отступы вокруг текстового контента */
+    padding: 20px; /* Добавляем отступы вокруг текстового контента */
+    box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+    margin-right: 20px; /* Добавляем отступ справа */
+    margin-left: auto; /* Устанавливаем автоматический отступ слева */
+
 }
 
 .left-half-text {
@@ -299,4 +306,160 @@ body, html {
     text-align: left;
     line-height: 32px;
     max-width: 600px;
+    padding-right: 80px !important;
+    flex: 1; /* Распределение пространства равномерно между дочерними элементами */
+    padding: 20px; /* Добавляем отступы вокруг текстового контента */
+    box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+    margin-right: 20px; /* Добавляем отступ справа */
+    margin-left: auto; /* Устанавливаем автоматический отступ слева */
+}
+
+@media screen and (max-width: 1000px) {
+    .split-block {
+        flex-direction: column; /* Устанавливаем направление flex колонкой */
+        margin-left: 36px;
+    }
+
+    .right-half {
+        order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
+        margin-top: 20px; /* Добавляем отступ сверху для правого блока */
+        margin-right: auto;
+    }
+
+    .left-half-main h2 {
+        margin-left: 36px; /* Устанавливаем отступ слева */
+        padding: 0px;
+    }
+
+    .left-half-text {
+        margin-left: 36px; /* Устанавливаем отступ слева */
+        padding: 0px;
+    }
+}
+
+
+@media screen and (max-width: 1400px) {
+    .left-half-main h2 {
+        margin-left: 36px; /* Устанавливаем отступ слева */
+        padding: 0px;
+    }
+
+    .left-half-text {
+        margin-left: 56px; /* Устанавливаем отступ слева */
+        padding: 0px;
+    }
+}
+
+.centered-block {
+    margin-top: 100px; /* Отступ сверху на 200 пикселей */
+    width: 100%; /* Ширина блока по всей ширине страницы */
+    height: 248px; /* Высота блока 248 пикселей */
+    display: flex; /* Размещаем текст по центру блока */
+    justify-content: center; /* Выравнивание текста по центру по горизонтали */
+    align-items: center; /* Выравнивание текста по центру по вертикали */
+    position: relative; /* Позиционируем для абсолютного позиционирования полос */
+}
+
+.centered-block p {
+    font-family: 'Raleway ExtraLight', sans-serif;
+    font-size: 48px;
+}
+
+
+.top-border, .bottom-border {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #868686;
+}
+
+.top-border {
+    top: 0;
+}
+
+.bottom-border {
+    bottom: 0;
+}
+
+@media screen and (max-width: 1400px) {
+    .centered-block p {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .centered-block p {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .centered-block p {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .centered-block p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .centered-block p {
+        font-size: 14px;
+    }
+}
+
+.carousel-block {
+    margin-top: 100px;
+}
+
+.carousel-block h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 48px;
+    margin-left: 200px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    margin-left: 200px;
+    margin-top: 28px;
+}
+
+.carousel-item {
+    width: 600px;
+    height: 400px;
+    background-color: #F6F6F6;
+    overflow: hidden; /* Добавляем свойство overflow: hidden; */
+    border-radius: 24px;
+    margin-right: 36px;
+}
+
+.carousel-item img {
+    max-width: 100%; /* Устанавливаем максимальную ширину изображения на 100% */
+    height: auto;
+}
+
+.item-content {
+    padding: 20px;
+    background-color: #F6F6F6;
+}
+
+.item-content p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-block {
+        margin-top: 20px; /* Уменьшаем отступ сверху на мобильных экранах */
+    }
 }

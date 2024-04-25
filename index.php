@@ -6,8 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Адаптивная Шапка</title>
+    <title>Научная школа</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
 </head>
 <body>
 	<header class="header">
@@ -40,7 +41,7 @@
 	    <!-- Здесь находится ваш текущий контент -->
 	    <div class="video-overlay">
 	        <!-- Здесь будет видео -->
-	        <iframe width="416" height="466" src="https://www.youtube.com/embed/A7Od1umtdYs?si=rizJGWeSY5hdZQC1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	        <!-- <iframe width="416" height="466" src="https://www.youtube.com/embed/A7Od1umtdYs?si=rizJGWeSY5hdZQC1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 	    </div>
 	</div>
 	<div class="section">
@@ -63,11 +64,40 @@
 				</div>
 			</div>
 	        <div class="right-half">
-	            <!-- Фотография в правом блоке -->
 	            <img src="assets/img/news.png" alt="Фотография" width="672" height="400">
 	        </div>
 	    </div>
+		<div class="centered-block">
+		    <div class="top-border"></div>
+		    <p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
+		    <div class="bottom-border"></div>
+		</div>
 	</div>
+	<div class="carousel-block">
+	    <h2>Рейтинг орнаментов</h2>
+	    <div class="carousel">
+	        <div class="carousel-item">
+	            <div class="item-content">
+	                <p>Фамилия Имя Отчество</p>
+	                <img src="assets/img/news.png" alt="Изображение">
+	            </div>
+	        </div>
+	        <div class="carousel-item">
+	            <div class="item-content">
+	                <p>Фамилия Имя Отчество</p>
+	                <img src="assets/img/news.png" alt="Изображение">
+	            </div>
+	        </div>
+	        <div class="carousel-item">
+	            <div class="item-content">
+	                <p>Фамилия Имя Отчество</p>
+	                <img src="assets/img/news.png" alt="Изображение">
+	            </div>
+	        </div>
+	        <!-- Дополнительные подблоки карусели -->
+	    </div>
+	</div>
+	<br></br><br></br><br></br>
 	<script src="assets/script.js"></script>
 </body>
 </html>
