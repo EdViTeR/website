@@ -13,18 +13,18 @@
 <body>
 	<header class="header">
 	    <div class="logo">
-	        <img src="assets/img/logo.png">
+	        <a href="/"><img src="assets/img/logo.png"></a>
 	    </div>
 	    <div class="nav-toggle">
 	        <img src="assets/img/icon.png" alt="Меню" onclick="toggleMenu()">
 	    </div>
 	    <nav class="nav">
 	        <ul>
-	            <li><a href="#">ШКОЛА</a></li>
+	            <li><a href="school.php">ШКОЛА</a></li>
 	            <li><a href="#">СТАТЬИ</a></li>
 	            <li><a href="#">КОЛЛЕКЦИИ</a></li>
 	            <li><a href="#">О ПРОЕКТЕ</a></li>
-	            <li><a href="#">КАБИНЕТ</a></li>
+	            <li><a href="cabinet/sign_in.php">КАБИНЕТ</a></li>
 	        </ul>
 	    </nav>
 	    <div class="dropdown-menu">
@@ -40,7 +40,14 @@
 	<div class="content">
 	    <!-- Здесь находится ваш текущий контент -->
 	    <div class="video-overlay">
+	    	<div class="scene">
+			  <div class="backdrop"></div>
+			  <div class="noise"></div>
+			  <div class="dots"></div>
+			  <div class="canvas"></div>
+			</div>
 	        <!-- Здесь будет видео -->
+	        <!-- <iframe width="464" height="500" src="https://www.youtube.com/embed/j6TwwXvwsKg?si=YG46TDxis9xbb_tP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 	        <!-- <iframe width="416" height="466" src="https://www.youtube.com/embed/A7Od1umtdYs?si=rizJGWeSY5hdZQC1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 	    </div>
 	</div>
@@ -48,7 +55,7 @@
 		<div class="inner-block">
 			<div class="left-block">
 			    <p>Сгенерируйте собственное уникальное изображение</p>
-			    <a href="#" class="generate-button">СГЕНЕРИРОВАТЬ</a>
+			    <a href="cabinet/sign_in.php" class="generate-button">ЗАГРУЗИТЬ</a>
 			</div>
 		    <div class="right-block">
 		        <img src="assets/img/img.png" alt="Your Image" width="575" height="500">
@@ -101,5 +108,3 @@
 	<script src="assets/script.js"></script>
 </body>
 </html>
-<!-- <a href="cabinet/sign_in.php" class="" type="submit">Вход</a> -->
-<!-- <a href="cabinet/sign_up.php" class="" type="submit">Регистрация</a> -->
