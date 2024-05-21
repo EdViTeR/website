@@ -66,7 +66,7 @@ require_once 'footer.php'
 		<div class="split-block">
 			<div class="left-half">
 				<div class="left-half-main">
-					<h2>Новости</h2>
+					Новости
 				</div>
 				<div class="left-half-text">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -82,6 +82,7 @@ require_once 'footer.php'
 			<div class="bottom-border"></div>
 		</div>
 	</div>
+
 	<div class="carousel-block">
 		<h2>Рейтинг орнаментов</h2>
 		<div class="carousel">

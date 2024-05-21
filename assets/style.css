@@ -169,7 +169,7 @@ html {
 }
 .section {
 	margin-top: 220px; /* Отступ сверху от блока .content */
-	height: 1400px; /* Высота секции */
+	/* height: 1400px; Высота секции */
 }
 
 .inner-block {
@@ -190,6 +190,10 @@ html {
 	font-family: "Raleway", sans-serif;
 	font-size: 64px; /* Базовый размер шрифта */
 	line-height: 1.2; /* Межстрочный интервал */
+}
+
+.left-block p {
+	font-weight: 500;
 }
 
 .generate-button {
@@ -295,7 +299,8 @@ html {
 
 .left-half-main {
 	font-family: "Raleway", sans-serif;
-	font-size: 32px; /* Изначальный размер шрифта */
+	font-size: 64px; /* Изначальный размер шрифта */
+	font-weight: 500;
 	text-align: left;
 	line-height: 32px;
 	max-width: 600px;
@@ -309,7 +314,7 @@ html {
 
 .left-half-text {
 	font-family: "Raleway", sans-serif;
-	font-size: 24px; /* Изначальный размер шрифта */
+	font-size: 32px; /* Изначальный размер шрифта */
 	text-align: left;
 	line-height: 32px;
 	max-width: 600px;
@@ -321,43 +326,8 @@ html {
 	margin-left: auto; /* Устанавливаем автоматический отступ слева */
 }
 
-@media screen and (max-width: 1000px) {
-	.split-block {
-		flex-direction: column; /* Устанавливаем направление flex колонкой */
-		margin-left: 36px;
-	}
-
-	.right-half {
-		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
-		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
-		margin-right: auto;
-	}
-
-	.left-half-main h2 {
-		margin-left: 36px; /* Устанавливаем отступ слева */
-		padding: 0px;
-	}
-
-	.left-half-text {
-		margin-left: 36px; /* Устанавливаем отступ слева */
-		padding: 0px;
-	}
-}
-
-@media screen and (max-width: 1400px) {
-	.left-half-main h2 {
-		margin-left: 36px; /* Устанавливаем отступ слева */
-		padding: 0px;
-	}
-
-	.left-half-text {
-		margin-left: 56px; /* Устанавливаем отступ слева */
-		padding: 0px;
-	}
-}
-
 .centered-block {
-	margin-top: 100px; /* Отступ сверху на 200 пикселей */
+	margin-top: 250px; /* Отступ сверху на 200 пикселей */
 	width: 100%; /* Ширина блока по всей ширине страницы */
 	height: 248px; /* Высота блока 248 пикселей */
 	display: flex; /* Размещаем текст по центру блока */
@@ -419,23 +389,33 @@ html {
 
 .carousel-block {
 	margin-top: 100px;
+	margin-bottom: 200px;
+	margin-left: 200px;
+	overflow: hidden;
 }
 
 .carousel-block h2 {
 	font-family: "Raleway", sans-serif;
-	font-size: 48px;
-	margin-left: 200px;
+	font-size: 64px;
+	font-weight: 500;
 }
 
 .carousel {
 	display: flex;
-	overflow-x: auto;
-	margin-left: 200px;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
 	margin-top: 28px;
 }
 
+.carousel::-webkit-scrollbar {
+	display: none;
+}
+
 .carousel-item {
-	width: 600px;
+	min-width: 600px;
+	scroll-snap-align: start;
 	height: 400px;
 	background-color: #f6f6f6;
 	overflow: hidden; /* Добавляем свойство overflow: hidden; */
@@ -467,6 +447,44 @@ html {
 
 	.carousel-block {
 		margin-top: 20px; /* Уменьшаем отступ сверху на мобильных экранах */
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.split-block,
+	.carousel-block {
+		flex-direction: column; /* Устанавливаем направление flex колонкой */
+		margin-left: 36px;
+	}
+
+	.right-half {
+		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
+		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
+		margin-right: auto;
+	}
+
+	.left-half-main,
+	.carousel-block {
+		margin-left: 36px; /* Устанавливаем отступ слева */
+	}
+
+	.left-half-text,
+	.carousel {
+		margin-left: 36px; /* Устанавливаем отступ слева */
+		padding: 0px;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.left-half-main,
+	.carousel-block {
+		margin-left: 36px; /* Устанавливаем отступ слева */
+	}
+
+	.left-half-text,
+	.carousel {
+		margin-left: 56px; /* Устанавливаем отступ слева */
+		padding: 0px;
 	}
 }
 
