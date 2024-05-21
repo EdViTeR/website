@@ -32,8 +32,8 @@ class Footer
 				</div>
 			</div>
 			<div class="social-group">
-				<a href="https://youtube.com"><img src="assets/img/youtube.svg" alt="Youtube"></a>
-				<a href="https://vk.com"><img src="assets/img/vk.svg" alt="VK"></a>
+				<a href="https://youtube.com"><img src="/assets/img/youtube.svg" alt="Youtube"></a>
+				<a href="https://vk.com"><img src="/assets/img/vk.svg" alt="VK"></a>
 			</div>
 
 		</footer>
