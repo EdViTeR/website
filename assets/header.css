@@ -50,6 +50,7 @@
 	font-family: "Raleway", sans-serif;
 	font-size: 21px;
 	letter-spacing: 3px;
+	transition: all 0.3s ease;
 }
 
 .nav {
@@ -109,7 +110,6 @@
 
 .nav ul li a:hover {
 	color: #ffffff; /* Изменяем цвет текста при наведении на ссылку */
-	text-decoration: underline;
 }
 
 /* Медиа-запрос для изменения размера шрифта и расположения ссылок на мобильных устройствах */
