@@ -1,622 +1,606 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* Обнуляем отступы у body и html */
-body, html {
-    margin: 0;
-    padding: 0;
+body,
+html {
+	margin: 0;
+	padding: 0;
 }
 
 /* Стили для шапки */
 .header {
-    position: fixed; /* Фиксированное позиционирование */
-    top: 0; /* Шапка прижата к верхнему краю экрана */
-    left: 0; /* Шапка прижата к левому краю экрана */
-    width: 100%; /* Ширина шапки равна ширине экрана */
-    height: 150px; /* Высота шапки 150 пикселей */
-    background-image: linear-gradient(to right, #A1C3FF, #FFAED8); /* Градиентный фон */
-    z-index: 2; /* Устанавливаем шапке z-index, чтобы она оставалась поверх остальных элементов */
+	position: fixed; /* Фиксированное позиционирование */
+	top: 0; /* Шапка прижата к верхнему краю экрана */
+	left: 0; /* Шапка прижата к левому краю экрана */
+	width: 100%; /* Ширина шапки равна ширине экрана */
+	height: 150px; /* Высота шапки 150 пикселей */
+	background-image: linear-gradient(
+		to right,
+		#a1c3ff,
+		#ffaed8
+	); /* Градиентный фон */
+	z-index: 2; /* Устанавливаем шапке z-index, чтобы она оставалась поверх остальных элементов */
 }
 
 /* Центрирование содержимого внутри шапки */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0 auto; /* Добавим это свойство для центрирования контейнера по горизонтали */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0 auto; /* Добавим это свойство для центрирования контейнера по горизонтали */
 }
 
 /* Стили для логотипа */
 .logo {
-    position: absolute; /* Позиционируем абсолютно */
-    width: 182px; /* Ширина логотипа */
-    height: 76px; /* Высота логотипа */
-    left: 5%; /* Отступ от левого края на 5% */
-    top: 50%; /* Положение по вертикали - по центру */
-    transform: translateY(-50%); /* Корректируем положение по вертикали */
+	position: absolute; /* Позиционируем абсолютно */
+	width: 182px; /* Ширина логотипа */
+	height: 76px; /* Высота логотипа */
+	left: 5%; /* Отступ от левого края на 5% */
+	top: 50%; /* Положение по вертикали - по центру */
+	transform: translateY(-50%); /* Корректируем положение по вертикали */
 }
 
 /* Стили для навигационного меню */
 
 /* Навигационное меню */
 .nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 5%; /* Отступ от правого края */
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 5%; /* Отступ от правого края */
 }
 
 .nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Располагаем ссылки в строку */
-    justify-content: flex-end; /* Выравнивание ссылок по правому краю */
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex; /* Располагаем ссылки в строку */
+	justify-content: flex-end; /* Выравнивание ссылок по правому краю */
 }
 
 .nav ul li {
-    margin-left: 4.375rem; /* Отступ между ссылками */
+	margin-left: 4.375rem; /* Отступ между ссылками */
 }
 
 .nav ul li:first-child {
-    margin-left: 0; /* Убираем отступ слева у первой ссылки */
+	margin-left: 0; /* Убираем отступ слева у первой ссылки */
 }
 
 .nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-family: 'Raleway', sans-serif;
-    font-size: 21px;
-    letter-spacing: 3px;
+	text-decoration: none;
+	color: #000;
+	font-family: "Raleway", sans-serif;
+	font-size: 21px;
+	letter-spacing: 3px;
 }
 
 .nav {
-    display: none; /* По умолчанию скрываем навигационное меню */
+	display: none; /* По умолчанию скрываем навигационное меню */
 }
 
 .nav-toggle {
-    display: block; /* Отображаем блок с иконкой */
-    position: absolute; /* Позиционируем абсолютно */
-    top: 50%; /* Выравниваем по вертикали по центру */
-    right: 5%; /* Отступ от правого края */
-    transform: translateY(-50%); /* Корректируем положение по вертикали */
+	display: block; /* Отображаем блок с иконкой */
+	position: absolute; /* Позиционируем абсолютно */
+	top: 50%; /* Выравниваем по вертикали по центру */
+	right: 5%; /* Отступ от правого края */
+	transform: translateY(-50%); /* Корректируем положение по вертикали */
 }
 
 .nav-toggle img {
-    width: 50px; /* Задаем ширину изображения */
-    height: 50px; /* Задаем высоту изображения */
-    cursor: pointer;
+	width: 50px; /* Задаем ширину изображения */
+	height: 50px; /* Задаем высоту изображения */
+	cursor: pointer;
 }
 
 .nav.active {
-    display: block;
+	display: block;
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 56px; /* Выберите подходящий отступ сверху */
-    right: 120px;
-    background-color: #fff; /* Цвет фона */
-    border: 1px solid #ccc; /* Граница */
-    border-radius: 5px; /* Закругление углов */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
-    padding: 10px; /* Отступ внутри блока */
+	display: none;
+	position: absolute;
+	top: 56px; /* Выберите подходящий отступ сверху */
+	right: 120px;
+	background-color: #fff; /* Цвет фона */
+	border: 1px solid #ccc; /* Граница */
+	border-radius: 5px; /* Закругление углов */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+	padding: 10px; /* Отступ внутри блока */
 }
 
 .dropdown-menu.active {
-    display: block;
+	display: block;
 }
 
 .dropdown-menu li {
-    list-style: none;
+	list-style: none;
 }
 
 .dropdown-menu li a {
-    text-decoration: none;
-    font-size: 36px; /* Увеличиваем размер шрифта */
-    line-height: 64px;
-    letter-spacing: 2px;
-    color: black; 
+	text-decoration: none;
+	font-size: 36px; /* Увеличиваем размер шрифта */
+	line-height: 64px;
+	letter-spacing: 2px;
+	color: black;
 }
 
 .dropdown-menu li a:hover {
-    color: #A1C3FF; /* Устанавливаем желтый цвет текста при наведении */
-    text-decoration: underline;
+	color: #a1c3ff; /* Устанавливаем желтый цвет текста при наведении */
+	text-decoration: underline;
 }
 
 .nav ul li a:hover {
-    color: #FFFFFF; /* Изменяем цвет текста при наведении на ссылку */
-    text-decoration: underline;
+	color: #ffffff; /* Изменяем цвет текста при наведении на ссылку */
+	text-decoration: underline;
 }
 
 /* Медиа-запрос для изменения размера шрифта и расположения ссылок на мобильных устройствах */
 @media only screen and (min-width: 1200px) {
-    .nav {
-        display: block; /* Отображаем навигационное меню при ширине экрана 1200px и более */
-    }
+	.nav {
+		display: block; /* Отображаем навигационное меню при ширине экрана 1200px и более */
+	}
 
-    .nav-toggle {
-        display: none; /* Скрываем блок с иконкой */
-    }
+	.nav-toggle {
+		display: none; /* Скрываем блок с иконкой */
+	}
 }
 
 .content {
-    position: relative; /* Относительное позиционирование */
-    width: 100%; /* Ширина блока равна ширине экрана */
-    top: 150px;
-    height: 100vh; /* Высота блока - высота шапки */
-    background-image: url('img/content.png'); /* Устанавливаем изображение как фон блока */
-    background-size: cover; /* Масштабируем изображение так, чтобы оно полностью заполняло блок */
-    background-position: center; /* Размещаем изображение по центру блока */
-    z-index: 1; /* Устанавливаем блоку под шапкой z-index, чтобы он оставался под шапкой */
+	position: relative; /* Относительное позиционирование */
+	width: 100%; /* Ширина блока равна ширине экрана */
+	top: 150px;
+	height: 100vh; /* Высота блока - высота шапки */
+	background-image: url("img/content.png"); /* Устанавливаем изображение как фон блока */
+	background-size: cover; /* Масштабируем изображение так, чтобы оно полностью заполняло блок */
+	background-position: center; /* Размещаем изображение по центру блока */
+	z-index: 1; /* Устанавливаем блоку под шапкой z-index, чтобы он оставался под шапкой */
 }
 
 .video-overlay {
-    position: absolute;
-    top: calc(50% - 30px);
-    left: calc(50% + 6px); /* Изменено значение left */
-    transform: translate(-50%, -50%);
-    z-index: 2;
+	position: absolute;
+	top: calc(50% - 30px);
+	left: calc(50% + 6px); /* Изменено значение left */
+	transform: translate(-50%, -50%);
+	z-index: 2;
 }
 .section {
-    margin-top: 220px; /* Отступ сверху от блока .content */
-    height: 1400px; /* Высота секции */
+	margin-top: 220px; /* Отступ сверху от блока .content */
+	height: 1400px; /* Высота секции */
 }
 
 .inner-block {
-    background-color: #FFEDC7; /* Цвет фона блока */
-    margin: 56px;/* Отступы по краям блока */
-    height: 568px; /* Высота блока */
-    border-radius: 35px; /* Закругление углов на 35 пикселей */
-    position: relative; /* Относительное позиционирование для блока */
-    min-width: 380px;
+	background-color: #ffedc7; /* Цвет фона блока */
+	margin: 56px; /* Отступы по краям блока */
+	height: 568px; /* Высота блока */
+	border-radius: 35px; /* Закругление углов на 35 пикселей */
+	position: relative; /* Относительное позиционирование для блока */
+	min-width: 380px;
 }
 
 .left-block {
-    float: left;
-    width: calc(50% - 68px); /* Учитываем отступ слева */
-    max-width: 800px; /* Максимальная ширина блока */
-    padding-left: 68px; /* Отступ слева */
-    padding-top: 68px; /* Отступ сверху */
-    font-family: 'Raleway', sans-serif;
-    font-size: 64px; /* Базовый размер шрифта */
-    line-height: 1.2; /* Межстрочный интервал */
+	float: left;
+	width: calc(50% - 68px); /* Учитываем отступ слева */
+	max-width: 800px; /* Максимальная ширина блока */
+	padding-left: 68px; /* Отступ слева */
+	padding-top: 68px; /* Отступ сверху */
+	font-family: "Raleway", sans-serif;
+	font-size: 64px; /* Базовый размер шрифта */
+	line-height: 1.2; /* Межстрочный интервал */
 }
 
 .generate-button {
-    display: inline-block;
-    width: 330px; /* Изменено на фиксированную ширину 330px */
-    min-width: 330px; /* Добавлено, чтобы сохранить минимальную ширину */
-    height: 72px;
-    background-color: #A1C3FF;
-    color: black;
-    font-family: 'Raleway', sans-serif;
-    font-size: 24px; /* Изначальный размер шрифта */
-    text-align: center;
-    line-height: 72px;
-    border-radius: 24px;
-    margin-top: 80px;
-    border: none;
-    text-decoration: none;
+	display: inline-block;
+	width: 330px; /* Изменено на фиксированную ширину 330px */
+	min-width: 330px; /* Добавлено, чтобы сохранить минимальную ширину */
+	height: 72px;
+	background-color: #a1c3ff;
+	color: black;
+	font-family: "Raleway", sans-serif;
+	font-size: 24px; /* Изначальный размер шрифта */
+	text-align: center;
+	line-height: 72px;
+	border-radius: 24px;
+	margin-top: 80px;
+	border: none;
+	text-decoration: none;
 }
 
 .generate-button:hover {
-    background-image: linear-gradient(to right, #A1C3FF, #FFAED8); /* Изменяем цвет кнопки при наведении */
-    color: #FFFFFF;
+	background-image: linear-gradient(
+		to right,
+		#a1c3ff,
+		#ffaed8
+	); /* Изменяем цвет кнопки при наведении */
+	color: #ffffff;
 }
 
 @media screen and (max-width: 1000px) {
-    .generate-button {
-        font-size: 20px; /* Уменьшаем размер шрифта на меньших экранах */
-    }
+	.generate-button {
+		font-size: 20px; /* Уменьшаем размер шрифта на меньших экранах */
+	}
 }
 
 @media screen and (max-width: 840px) {
-    .generate-button {
-        font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-    }
-    .right-block {
-        display: none;
-    }
+	.generate-button {
+		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+	}
+	.right-block {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 720px) {
-    .generate-button {
-        font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-        height: 64px;
-    }
-    .inner-block {
-        height: 440px;
-    }
+	.generate-button {
+		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+		height: 64px;
+	}
+	.inner-block {
+		height: 440px;
+	}
 }
-
 
 /* Медиа-запросы для адаптивности */
 @media screen and (max-width: 768px) {
-    .left-block {
-        font-size: 48px; /* Уменьшаем размер шрифта на маленьких экранах */
-        padding-left: 5%; /* Отступ слева в процентах */
-        padding-top: 5%; /* Отступ сверху в процентах */
-    }
+	.left-block {
+		font-size: 48px; /* Уменьшаем размер шрифта на маленьких экранах */
+		padding-left: 5%; /* Отступ слева в процентах */
+		padding-top: 5%; /* Отступ сверху в процентах */
+	}
 }
 
 @media screen and (max-width: 480px) {
-    .left-block {
-        font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-    }
-    .inner-block {
-        height: 340px;
-    }
+	.left-block {
+		font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+	}
+	.inner-block {
+		height: 340px;
+	}
 }
 
 .right-block {
-    position: absolute; /* Абсолютное позиционирование */
-    top: 50%; /* Положение по вертикали - по центру */
-    right: 70px; /* Отступ от правого края */
-    transform: translateY(-50%); /* Корректируем положение по вертикали */
+	position: absolute; /* Абсолютное позиционирование */
+	top: 50%; /* Положение по вертикали - по центру */
+	right: 70px; /* Отступ от правого края */
+	transform: translateY(-50%); /* Корректируем положение по вертикали */
 }
 
 .right-block img {
-    width: 575px; /* Ширина изображения */
-    height: 500px; /* Высота изображения */
+	width: 575px; /* Ширина изображения */
+	height: 500px; /* Высота изображения */
 }
 
 .split-block {
-    display: flex; /* Размещаем дочерние элементы внутри flex-контейнера */
+	display: flex; /* Размещаем дочерние элементы внутри flex-контейнера */
 }
 
 .left-half {
-    flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-    box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
+	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
 }
 
 .right-half {
-    flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-    padding: 20px; /* Добавляем отступы вокруг фотографии */
-    box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
+	padding: 20px; /* Добавляем отступы вокруг фотографии */
+	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
 }
 
 .right-half img {
-    max-width: 100%; /* Ширина изображения не превышает размер блока */
-    height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+	max-width: 100%; /* Ширина изображения не превышает размер блока */
+	height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
 }
 
 .left-half-main {
-    font-family: 'Raleway', sans-serif;
-    font-size: 32px; /* Изначальный размер шрифта */
-    text-align: left;
-    line-height: 32px;
-    max-width: 600px;
-    flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-    margin-top: 20px; /* Добавляем отступы вокруг текстового контента */
-    padding: 20px; /* Добавляем отступы вокруг текстового контента */
-    box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
-    margin-right: 20px; /* Добавляем отступ справа */
-    margin-left: auto; /* Устанавливаем автоматический отступ слева */
-
+	font-family: "Raleway", sans-serif;
+	font-size: 32px; /* Изначальный размер шрифта */
+	text-align: left;
+	line-height: 32px;
+	max-width: 600px;
+	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
+	margin-top: 20px; /* Добавляем отступы вокруг текстового контента */
+	padding: 20px; /* Добавляем отступы вокруг текстового контента */
+	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+	margin-right: 20px; /* Добавляем отступ справа */
+	margin-left: auto; /* Устанавливаем автоматический отступ слева */
 }
 
 .left-half-text {
-    font-family: 'Raleway', sans-serif;
-    font-size: 24px; /* Изначальный размер шрифта */
-    text-align: left;
-    line-height: 32px;
-    max-width: 600px;
-    padding-right: 80px !important;
-    flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-    padding: 20px; /* Добавляем отступы вокруг текстового контента */
-    box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
-    margin-right: 20px; /* Добавляем отступ справа */
-    margin-left: auto; /* Устанавливаем автоматический отступ слева */
+	font-family: "Raleway", sans-serif;
+	font-size: 24px; /* Изначальный размер шрифта */
+	text-align: left;
+	line-height: 32px;
+	max-width: 600px;
+	padding-right: 80px !important;
+	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
+	padding: 20px; /* Добавляем отступы вокруг текстового контента */
+	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+	margin-right: 20px; /* Добавляем отступ справа */
+	margin-left: auto; /* Устанавливаем автоматический отступ слева */
 }
 
 @media screen and (max-width: 1000px) {
-    .split-block {
-        flex-direction: column; /* Устанавливаем направление flex колонкой */
-        margin-left: 36px;
-    }
+	.split-block {
+		flex-direction: column; /* Устанавливаем направление flex колонкой */
+		margin-left: 36px;
+	}
 
-    .right-half {
-        order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
-        margin-top: 20px; /* Добавляем отступ сверху для правого блока */
-        margin-right: auto;
-    }
+	.right-half {
+		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
+		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
+		margin-right: auto;
+	}
 
-    .left-half-main h2 {
-        margin-left: 36px; /* Устанавливаем отступ слева */
-        padding: 0px;
-    }
+	.left-half-main h2 {
+		margin-left: 36px; /* Устанавливаем отступ слева */
+		padding: 0px;
+	}
 
-    .left-half-text {
-        margin-left: 36px; /* Устанавливаем отступ слева */
-        padding: 0px;
-    }
+	.left-half-text {
+		margin-left: 36px; /* Устанавливаем отступ слева */
+		padding: 0px;
+	}
 }
 
-
 @media screen and (max-width: 1400px) {
-    .left-half-main h2 {
-        margin-left: 36px; /* Устанавливаем отступ слева */
-        padding: 0px;
-    }
+	.left-half-main h2 {
+		margin-left: 36px; /* Устанавливаем отступ слева */
+		padding: 0px;
+	}
 
-    .left-half-text {
-        margin-left: 56px; /* Устанавливаем отступ слева */
-        padding: 0px;
-    }
+	.left-half-text {
+		margin-left: 56px; /* Устанавливаем отступ слева */
+		padding: 0px;
+	}
 }
 
 .centered-block {
-    margin-top: 100px; /* Отступ сверху на 200 пикселей */
-    width: 100%; /* Ширина блока по всей ширине страницы */
-    height: 248px; /* Высота блока 248 пикселей */
-    display: flex; /* Размещаем текст по центру блока */
-    justify-content: center; /* Выравнивание текста по центру по горизонтали */
-    align-items: center; /* Выравнивание текста по центру по вертикали */
-    position: relative; /* Позиционируем для абсолютного позиционирования полос */
+	margin-top: 100px; /* Отступ сверху на 200 пикселей */
+	width: 100%; /* Ширина блока по всей ширине страницы */
+	height: 248px; /* Высота блока 248 пикселей */
+	display: flex; /* Размещаем текст по центру блока */
+	justify-content: center; /* Выравнивание текста по центру по горизонтали */
+	align-items: center; /* Выравнивание текста по центру по вертикали */
+	position: relative; /* Позиционируем для абсолютного позиционирования полос */
 }
 
 .centered-block p {
-    font-family: 'Raleway ExtraLight', sans-serif;
-    font-size: 48px;
+	font-family: "Raleway ExtraLight", sans-serif;
+	font-size: 48px;
 }
 
-
-.top-border, .bottom-border {
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color: #868686;
+.top-border,
+.bottom-border {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: #868686;
 }
 
 .top-border {
-    top: 0;
+	top: 0;
 }
 
 .bottom-border {
-    bottom: 0;
+	bottom: 0;
 }
 
 @media screen and (max-width: 1400px) {
-    .centered-block p {
-        font-size: 40px;
-    }
+	.centered-block p {
+		font-size: 40px;
+	}
 }
 
 @media screen and (max-width: 1200px) {
-    .centered-block p {
-        font-size: 32px;
-    }
+	.centered-block p {
+		font-size: 32px;
+	}
 }
 
 @media screen and (max-width: 1000px) {
-    .centered-block p {
-        font-size: 28px;
-    }
+	.centered-block p {
+		font-size: 28px;
+	}
 }
 
 @media screen and (max-width: 840px) {
-    .centered-block p {
-        font-size: 20px;
-    }
+	.centered-block p {
+		font-size: 20px;
+	}
 }
 
 @media screen and (max-width: 600px) {
-    .centered-block p {
-        font-size: 14px;
-    }
+	.centered-block p {
+		font-size: 14px;
+	}
 }
 
 .carousel-block {
-    margin-top: 100px;
+	margin-top: 100px;
 }
 
 .carousel-block h2 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 48px;
-    margin-left: 200px;
+	font-family: "Raleway", sans-serif;
+	font-size: 48px;
+	margin-left: 200px;
 }
 
 .carousel {
-    display: flex;
-    overflow-x: auto;
-    margin-left: 200px;
-    margin-top: 28px;
+	display: flex;
+	overflow-x: auto;
+	margin-left: 200px;
+	margin-top: 28px;
 }
 
 .carousel-item {
-    width: 600px;
-    height: 400px;
-    background-color: #F6F6F6;
-    overflow: hidden; /* Добавляем свойство overflow: hidden; */
-    border-radius: 24px;
-    margin-right: 36px;
+	width: 600px;
+	height: 400px;
+	background-color: #f6f6f6;
+	overflow: hidden; /* Добавляем свойство overflow: hidden; */
+	border-radius: 24px;
+	margin-right: 36px;
 }
 
 .carousel-item img {
-    max-width: 100%; /* Устанавливаем максимальную ширину изображения на 100% */
-    height: auto;
+	max-width: 100%; /* Устанавливаем максимальную ширину изображения на 100% */
+	height: auto;
 }
 
 .item-content {
-    padding: 20px;
-    background-color: #F6F6F6;
+	padding: 20px;
+	background-color: #f6f6f6;
 }
 
 .item-content p {
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
-    margin-bottom: 20px;
+	font-family: "Raleway", sans-serif;
+	font-size: 18px;
+	margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
-    .section {
-        flex-direction: column;
-        align-items: center;
-    }
+	.section {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .carousel-block {
-        margin-top: 20px; /* Уменьшаем отступ сверху на мобильных экранах */
-    }
+	.carousel-block {
+		margin-top: 20px; /* Уменьшаем отступ сверху на мобильных экранах */
+	}
 }
 
 .form-signin {
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px; /* Максимальная ширина формы */
-    margin: 0 auto; /* Центрируем форму по горизонтали */
-    margin-top: 100px; /* Центрируем форму по горизонтали */
+	text-align: center;
+	background-color: #f9f9f9;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	max-width: 400px; /* Максимальная ширина формы */
+	margin: 0 auto; /* Центрируем форму по горизонтали */
+	margin-top: 100px; /* Центрируем форму по горизонтали */
 }
 
 .form-signin h1 {
-    margin-bottom: 30px; /* Увеличиваем отступ между заголовком и полями */
-    font-size: 36px;
-    font-weight: 600; /* Добавляем полужирное начертание (Semibold) */
-    font-family: 'Raleway', sans-serif; /* Добавляем шрифт Raleway */
+	margin-bottom: 30px; /* Увеличиваем отступ между заголовком и полями */
+	font-size: 36px;
+	font-weight: 600; /* Добавляем полужирное начертание (Semibold) */
+	font-family: "Raleway", sans-serif; /* Добавляем шрифт Raleway */
 }
 
 .form-field {
-    margin-bottom: 30px;
-    text-align: left; /* Выравниваем текст подписей по левому краю */
+	margin-bottom: 30px;
+	text-align: left; /* Выравниваем текст подписей по левому краю */
 }
 
 .form-field label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: 400;
-    font-family: 'Raleway', sans-serif;
+	display: block;
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "Raleway", sans-serif;
 }
 
 .form-field input {
-    width: 100%;
-    height: 50px;
-    border: 2px solid #b3b3b3;
-    border-radius: 8px;
-    padding: 8px;
-    font-size: 16px;
-    box-sizing: border-box; /* Учитываем border и padding в ширине */
+	width: 100%;
+	height: 50px;
+	border: 2px solid #b3b3b3;
+	border-radius: 8px;
+	padding: 8px;
+	font-size: 16px;
+	box-sizing: border-box; /* Учитываем border и padding в ширине */
 }
 
 button {
-    width: 100%;
-    height: 40px;
-    background-color: #82a8f7;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: 400;
-    font-family: 'Raleway', sans-serif;
+	width: 100%;
+	height: 40px;
+	background-color: #82a8f7;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	font-weight: 400;
+	font-family: "Raleway", sans-serif;
 }
 
 button:hover {
-    background-color: #a1c3ff;
-}
-
-p {
-    margin-top: 20px;
-    font-size: 14px;
-    text-align: center;
-    font-weight: 400;
-    font-family: 'Raleway', sans-serif;
+	background-color: #a1c3ff;
 }
 
 .content-school {
-    margin-top: 200px;
-    padding: 40px;
-    text-align: center;
+	margin-top: 200px;
+	padding: 40px;
+	text-align: center;
 }
 
 .content-school h1 {
-    font-size: 64px;
-    font-weight: 400;
-    font-family: 'Raleway', sans-serif;
+	font-size: 64px;
+	font-weight: 400;
+	font-family: "Raleway", sans-serif;
 }
 
 .leader {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: top;
-    margin: 40px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: top;
+	margin: 40px 0;
 }
 
 .leader img {
-    max-width: 100%;
-    border-radius: 10px;
+	max-width: 100%;
+	border-radius: 10px;
 }
 
 .leader-info {
-    max-width: 500px;
-    padding: 40px;
-    vertical-align: top;
+	max-width: 500px;
+	padding: 40px;
+	vertical-align: top;
 }
 
 .leader-info h2 {
-    text-align: left;
-    color: #A1C3FF;
-    vertical-align: top;
-    font-size: 48px;
-    font-weight: 400;
-    font-family: 'Raleway', sans-serif;
+	text-align: left;
+	color: #a1c3ff;
+	vertical-align: top;
+	font-size: 48px;
+	font-weight: 400;
+	font-family: "Raleway", sans-serif;
 }
 
 .leader-info p {
-    text-align: left;
-    color: #000000;
-    vertical-align: top;
-    font-size: 26px;
-    font-weight: 400;
-    font-family: 'Raleway', sans-serif;
+	text-align: left;
+	color: #000000;
+	vertical-align: top;
+	font-size: 26px;
+	font-weight: 400;
+	font-family: "Raleway", sans-serif;
 }
 
 .leader-info a {
-    display: inline-block;
-    padding: 20px 40px;
-    margin-top: 20px;
-    background-color: #d9eaff;
-    border-radius: 20px;
-    text-decoration: none;
-    color: #000;
-    font-weight: 400;
-    vertical-align: bottom !important;
-    font-size: 24px;
-    font-family: 'Raleway', sans-serif;
-}
-
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 40px;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-footer a {
-    color: #fff;
+	display: inline-block;
+	padding: 20px 40px;
+	margin-top: 20px;
+	background-color: #d9eaff;
+	border-radius: 20px;
+	text-decoration: none;
+	color: #000;
+	font-weight: 400;
+	vertical-align: bottom !important;
+	font-size: 24px;
+	font-family: "Raleway", sans-serif;
 }
 
 @media (max-width: 768px) {
-    .leader {
-        flex-direction: column;
-    }
-    .leader-info {
-        text-align: center;
-    }
-    .leader-info p {
-        text-align: center;
-    }
+	.leader {
+		flex-direction: column;
+	}
+	.leader-info {
+		text-align: center;
+	}
+	.leader-info p {
+		text-align: center;
+	}
 }
