@@ -68,20 +68,20 @@ if (isset($_SESSION['user'])) {
                         <label for="repeat_password">Подтвердите пароль</label>
                         <input type="password" id="repeat_password" name="repeat_password" required>
                     </div>
+                    <?php 
+                        if (isset($_SESSION['access'])) {
+                            echo '<p class="access">' . $_SESSION['access'] . '</p>';
+                        } elseif (isset($_SESSION['message'])) {
+                            echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                        }
+                        unset($_SESSION['access']);
+                        unset($_SESSION['message']);
+                    ?>
                     <button type="submit">Зарегистрироваться</button>
                 </form>
                 <p>Уже есть аккаунт? <a href="sign_in.php">Войти!</a></p>
             </main>
         </div>
-        <?php 
-            if (isset($_SESSION['access'])) {
-                echo '<p class="access">' . $_SESSION['access'] . '</p>';
-            } elseif (isset($_SESSION['message'])) {
-                echo '<p class="message">' . $_SESSION['message'] . '</p>';
-            }
-            unset($_SESSION['access']);
-            unset($_SESSION['message']);
-        ?>
         </main>
     <script src="../assets/script.js"></script>
     </body>

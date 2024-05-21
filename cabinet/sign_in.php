@@ -61,19 +61,19 @@ if (isset($_SESSION['user'])) {
                         <input type="password" id="password" name="password" required>
                     </div>
                     <button type="submit">Войти</button>
+                    <?php 
+                        if (isset($_SESSION['access'])) {
+                            echo '<p class="access">' . $_SESSION['access'] . '</p>';
+                        } elseif (isset($_SESSION['message'])) {
+                            echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                        }
+                        unset($_SESSION['access']);
+                        unset($_SESSION['message']);
+                    ?>
                 </form>
                 <p>Нет аккаунта? <a href="sign_up.php">Зарегистрируйтесь!</a></p>
             </main>
         </div>
-        <?php 
-            if (isset($_SESSION['access'])) {
-                echo '<p class="access">' . $_SESSION['access'] . '</p>';
-            } elseif (isset($_SESSION['message'])) {
-                echo '<p class="message">' . $_SESSION['message'] . '</p>';
-            }
-            unset($_SESSION['access']);
-            unset($_SESSION['message']);
-        ?>
         </main>
     <script src="../assets/script.js"></script>
     </body>
