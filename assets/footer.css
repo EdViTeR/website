@@ -1,0 +1,77 @@
+footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 70px 55px 50px;
+	font-family: "Raleway", sans-serif;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 5%;
+	box-sizing: border-box;
+}
+
+footer a {
+	color: #87ceeb;
+	text-decoration: none;
+}
+
+footer h2 {
+	font-size: 32px;
+	font-weight: 500;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	gap: 100px;
+}
+
+.contacts {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.group {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 20px;
+}
+
+footer p {
+	font-size: 24px;
+	font-weight: 400;
+	text-align: left;
+}
+
+footer a {
+	text-decoration: none;
+	color: white;
+}
+
+.social-group {
+	display: flex;
+	flex-direction: row;
+	gap: 40px;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.social-group img {
+	width: 42px;
+}
+
+.social-group a {
+	opacity: 1;
+	transition: all 0.3s;
+}
+
+.social-group a:hover {
+	opacity: 0.5;
+}

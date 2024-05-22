@@ -1,18 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var toggle = document.querySelector('.nav-toggle');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
+document.addEventListener("DOMContentLoaded", function () {
+	var toggle = document.querySelector(".nav-toggle");
+	var dropdownMenu = document.querySelector(".dropdown-menu");
 
-    toggle.addEventListener('click', function(event) {
-        dropdownMenu.classList.toggle('active');
-    });
+	toggle.addEventListener("click", function (event) {
+		dropdownMenu.classList.toggle("active");
+	});
 
-    document.addEventListener('click', function(event) {
-        var isClickInsideToggle = toggle.contains(event.target);
-        if (!isClickInsideToggle && dropdownMenu.classList.contains('active')) {
-            dropdownMenu.classList.remove('active');
-        }
-    });
+	document.addEventListener("click", function (event) {
+		var isClickInsideToggle = toggle.contains(event.target);
+		if (!isClickInsideToggle && dropdownMenu.classList.contains("active")) {
+			dropdownMenu.classList.remove("active");
+		}
+	});
 });
+
+let carousel = document.querySelector(".carousel");
+let carouselItems = document.querySelectorAll(".carousel-item");
+let currentIndex = 0;
+
+function scrollToNextItem() {
+	if (currentIndex < carouselItems.length - 1) {
+		currentIndex++;
+	} else {
+		currentIndex = 0;
+	}
+	carousel.scrollTo({
+		left: carouselItems[currentIndex].offsetLeft,
+		behavior: "smooth",
+	});
+}
+
+setInterval(scrollToNextItem, 3000);
 
 // import { GUI } from 'https://cdn.skypack.dev/dat.gui'
 

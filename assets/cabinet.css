@@ -1,0 +1,67 @@
+.form-signin {
+	text-align: center;
+	padding: 20px;
+	max-width: 500px; /* Максимальная ширина формы */
+	margin: 0 auto; /* Центрируем форму по горизонтали */
+	margin-top: 100px; /* Центрируем форму по горизонтали */
+}
+
+.form-signin button {
+	max-width: fit-content;
+	padding: 16px 36px;
+	color: black;
+	font-size: 24px;
+	font-weight: 500;
+	margin-top: 60px;
+}
+
+.form-title {
+	margin-bottom: 30px; /* Увеличиваем отступ между заголовком и полями */
+	font-size: 64px;
+	font-weight: 600; /* Добавляем полужирное начертание (Semibold) */
+	font-family: "Raleway", sans-serif; /* Добавляем шрифт Raleway */
+}
+
+.form-field {
+	margin-bottom: 30px;
+	text-align: left; /* Выравниваем текст подписей по левому краю */
+}
+
+.form-field label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "Raleway", sans-serif;
+}
+
+.form-field input {
+	width: 100%;
+	height: 50px;
+	border: 2px solid #b3b3b3;
+	border-radius: 12px;
+	padding: 8px;
+	font-size: 16px;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+}
+
+.form-field input:focus {
+	outline: none;
+	border-color: #a1c3ff;
+}
+
+.redirect {
+	margin-top: 30px;
+	font-size: 18px;
+	color: #b3b3b3;
+}
+
+.redirect a {
+	color: #a1c3ff;
+	transition: all 0.3s ease;
+}
+
+.redirect a:hover {
+	color: #83b0ff;
+}
