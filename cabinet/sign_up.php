@@ -30,40 +30,38 @@ $header->render();
 ?>
 
 <body>
-    <div class="container">
-        <main class="form-signin">
-            <div class="form-title">Регистрация</div>
-            <form action="save_user.php" method="post">
-                <div class="form-field">
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-field">
-                    <label for="email">Почта</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-field">
-                    <label for="password">Пароль</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="form-field">
-                    <label for="repeat_password">Подтвердите пароль</label>
-                    <input type="password" id="repeat_password" name="repeat_password" required>
-                </div>
-                <?php
-                if (isset($_SESSION['access'])) {
-                    echo '<p class="access">' . $_SESSION['access'] . '</p>';
-                } elseif (isset($_SESSION['message'])) {
-                    echo '<p class="message">' . $_SESSION['message'] . '</p>';
-                }
-                unset($_SESSION['access']);
-                unset($_SESSION['message']);
-                ?>
-                <button type="submit">Зарегистрироваться</button>
-            </form>
-            <p class="redirect">Уже есть аккаунт? <a href="sign_in.php">Войти!</a></p>
-        </main>
-    </div>
+    <main class="form-signin">
+        <div class="form-title">Регистрация</div>
+        <form action="save_user.php" method="post">
+            <div class="form-field">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-field">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-field">
+                <label for="repeat_password">Подтвердите пароль</label>
+                <input type="password" id="repeat_password" name="repeat_password" required>
+            </div>
+            <?php
+            if (isset($_SESSION['access'])) {
+                echo '<p class="access">' . $_SESSION['access'] . '</p>';
+            } elseif (isset($_SESSION['message'])) {
+                echo '<p class="message">' . $_SESSION['message'] . '</p>';
+            }
+            unset($_SESSION['access']);
+            unset($_SESSION['message']);
+            ?>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="redirect">Уже есть аккаунт? <a href="sign_in.php">Войти!</a></p>
+    </main>
     <div class="centered-block">
         <div class="top-border"></div>
         <p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
