@@ -16,7 +16,7 @@ class Header
 				<ul>
 					<li><a href="/school.php">ШКОЛА</a></li>
 					<li><a href="#">СТАТЬИ</a></li>
-					<li><a href="#">КОЛЛЕКЦИИ</a></li>
+					<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
 					<li><a href="#">О ПРОЕКТЕ</a></li>
 					<li><a href="/cabinet/sign_in.php">КАБИНЕТ</a></li>
 				</ul>
@@ -25,7 +25,7 @@ class Header
 				<ul>
 					<li><a href="/school.php">ШКОЛА</a></li>
 					<li><a href="#">СТАТЬИ</a></li>
-					<li><a href="#">КОЛЛЕКЦИИ</a></li>
+					<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
 					<li><a href="#">О ПРОЕКТЕ</a></li>
 					<li><a href="/cabinet/sign_in.php">КАБИНЕТ</a></li>
 				</ul>
