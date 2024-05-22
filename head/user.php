@@ -15,7 +15,10 @@
 </head>
 <body>
     <a href="../logout.php" class="" type="submit">Выход</a>
-
-<?php include('../assets/footer.php'); ?>
+    <?php
+        require_once 'footer.php';
+        $footer = new Footer();
+        $footer->render();
+    ?>
 </body>
 </html>
