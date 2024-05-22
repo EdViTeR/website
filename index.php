@@ -31,15 +31,11 @@
 		</div>
 	</div>
 	<div class="section">
-		<div class="inner-block">
-			<div class="left-block">
-				<p>Сгенерируйте собственное уникальное изображение</p>
-				<a href="cabinet/sign_in.php" class="generate-button">ЗАГРУЗИТЬ</a>
-			</div>
-			<div class="right-block">
-				<img src="assets/img/img.png" alt="Your Image" width="575" height="500">
-			</div>
-		</div>
+		<?php
+		require_once 'generate-banner.php';
+		$header = new Banner();
+		$header->render();
+		?>
 		<div class="split-block">
 			<div class="left-half">
 				<div class="left-half-main">

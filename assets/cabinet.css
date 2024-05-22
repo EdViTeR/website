@@ -19,7 +19,6 @@
 	margin-bottom: 30px; /* Увеличиваем отступ между заголовком и полями */
 	font-size: 64px;
 	font-weight: 600; /* Добавляем полужирное начертание (Semibold) */
-	font-family: "Raleway", sans-serif; /* Добавляем шрифт Raleway */
 }
 
 .form-field {
@@ -64,4 +63,15 @@
 
 .redirect a:hover {
 	color: #83b0ff;
+}
+
+.cabinet-container {
+	display: flex;
+	flex-direction: column;
+	margin: 120px 55px;
+}
+
+.cabinet-title {
+	font-size: 64px;
+	font-weight: 600;
 }
