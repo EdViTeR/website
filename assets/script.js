@@ -12,6 +12,35 @@ document.addEventListener("DOMContentLoaded", function () {
 			dropdownMenu.classList.remove("active");
 		}
 	});
+
+	let carouselPrev = document.querySelector(".carousel-control-prev");
+	let carouselNext = document.querySelector(".carousel-control-next");
+
+	carouselPrev.addEventListener("click", function () {
+		// Move to the previous item
+		if (currentIndex > 0) {
+			currentIndex--;
+		} else {
+			currentIndex = carouselItems.length - 1; // Move to the last item if at the beginning
+		}
+		carousel.scrollTo({
+			left: carouselItems[currentIndex].offsetLeft,
+			behavior: "smooth",
+		});
+	});
+
+	carouselNext.addEventListener("click", function () {
+		// Move to the next item
+		if (currentIndex < carouselItems.length - 1) {
+			currentIndex++;
+		} else {
+			currentIndex = 0; // Move to the first item if at the end
+		}
+		carousel.scrollTo({
+			left: carouselItems[currentIndex].offsetLeft,
+			behavior: "smooth",
+		});
+	});
 });
 
 let carousel = document.querySelector(".carousel");

@@ -1,6 +1,3 @@
-<?php
-require_once 'footer.php'
-?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -8,7 +5,7 @@ require_once 'footer.php'
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Научная школа</title>
-	<link rel="stylesheet" href="assets/style.css">
+	<link rel="stylesheet" href="assets/index.css">
 	<link rel="stylesheet" href="assets/globals.css">
 	<link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
 </head>
@@ -85,6 +82,11 @@ require_once 'footer.php'
 				</div>
 			</div>
 			<!-- Дополнительные подблоки карусели -->
+		</div>
+
+		<div class="carousel-controls">
+			<button class="carousel-control-prev"><img src="assets/img/prev-arrow.svg" alt="Prev"></button>
+			<button class="carousel-control-next"><img src="assets/img/next-arrow.svg" alt="Next"></button>
 		</div>
 	</div>
 

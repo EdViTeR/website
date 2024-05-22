@@ -8,6 +8,7 @@ body,
 html {
 	margin: 0;
 	padding: 0;
+	font-family: "Raleway", sans-serif;
 }
 
 button {
@@ -36,10 +37,8 @@ a {
 .container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0 auto; /* Добавим это свойство для центрирования контейнера по горизонтали */
+	margin: 120px 100px;
+	/* height: 100vh; */
 }
 
 .centered-block {
