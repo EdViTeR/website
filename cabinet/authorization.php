@@ -23,6 +23,9 @@
                     header("Location: ../user/user.php"); //Пользователь
                     break;
                 case '2':
+                    header("Location: ../head/user.php"); //руководитель
+                    break;
+                case '5':
                     header("Location: ../admin/admin.php"); //админ
                     break;
             } 
