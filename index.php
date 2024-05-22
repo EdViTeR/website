@@ -15,9 +15,9 @@ require_once 'footer.php'
 
 <body>
 	<?php
-	require_once 'header.php';
-	$header = new Header();
-	$header->render();
+		require_once 'header.php';
+		$header = new Header();
+		$header->render();
 	?>
 	<div class="content">
 		<!-- Здесь находится ваш текущий контент -->
@@ -89,9 +89,9 @@ require_once 'footer.php'
 	</div>
 
 	<?php
-	require_once 'footer.php';
-	$footer = new Footer();
-	$footer->render();
+		require_once 'footer.php';
+		$footer = new Footer();
+		$footer->render();
 	?>
 
 	<script src="assets/script.js"></script>
