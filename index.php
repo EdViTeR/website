@@ -62,19 +62,37 @@
 		<div class="carousel">
 			<div class="carousel-item">
 				<div class="item-content">
-					<p>Фамилия Имя Отчество</p>
+					<div class="item-content-title">
+						<p>Фамилия Имя Отчество</p>
+						<div class="item-content-rating">
+							<span class="item-content-rating-value">1</span>
+							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+						</div>
+					</div>
 					<img src="assets/img/news.png" alt="Изображение">
 				</div>
 			</div>
 			<div class="carousel-item">
 				<div class="item-content">
-					<p>Фамилия Имя Отчество</p>
+					<div class="item-content-title">
+						<p>Фамилия Имя Отчество</p>
+						<div class="item-content-rating">
+							<span class="item-content-rating-value">2</span>
+							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+						</div>
+					</div>
 					<img src="assets/img/news.png" alt="Изображение">
 				</div>
 			</div>
 			<div class="carousel-item">
 				<div class="item-content">
-					<p>Фамилия Имя Отчество</p>
+					<div class="item-content-title">
+						<p>Фамилия Имя Отчество</p>
+						<div class="item-content-rating">
+							<span class="item-content-rating-value">3</span>
+							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+						</div>
+					</div>
 					<img src="assets/img/news.png" alt="Изображение">
 				</div>
 			</div>
