@@ -28,15 +28,16 @@
                     <button class="leader-button" href="#">ПЕРЕЙТИ В ПРОФИЛЬ</button>
                 </div>
             </div>
-            <div class="leader-card">
+            <div class="leader-card right-photo">
+                <img src="assets/img/photo_2.png" alt="А.Н. Новиков" class="leader-photo">
                 <div class="leader-info">
                     <div class="leader-name">А.Н. Новиков</div>
                     <p class="leader-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <button class="leader-button" href="#">ПЕРЕЙТИ В ПРОФИЛЬ</button>
+                    <button class="leader-button" href="#">ПЕРЕЙТИ К ЦИТАТАМ Н. П. БЕСЧАСТНОГО</button>
                 </div>
-                <img src="assets/img/photo_2.png" alt="А.Н. Новиков" class="leader-photo">
             </div>
         </div>
+
     </div>
 
     <?php
