@@ -17,7 +17,7 @@
     $header->render();
     ?>
 
-    <div class="content-school">
+    <div class="content-school container">
         <h1>Наши руководители</h1>
         <div class="leaders">
             <div class="leader-card">
