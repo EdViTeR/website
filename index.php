@@ -12,9 +12,9 @@
 
 <body>
 	<?php
-		require_once 'header.php';
-		$header = new Header();
-		$header->render();
+	require_once 'header.php';
+	$header = new Header();
+	$header->render();
 	?>
 	<div class="content">
 		<!-- Здесь находится ваш текущий контент -->
@@ -49,11 +49,12 @@
 				<img src="assets/img/news.png" alt="Фотография" width="672" height="400">
 			</div>
 		</div>
-		<div class="centered-block">
-			<div class="top-border"></div>
-			<p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
-			<div class="bottom-border"></div>
-		</div>
+
+		<?php
+		require_once 'quote.php';
+		$quote = new Quote();
+		$quote->render();
+		?>
 	</div>
 
 	<div class="carousel-block">
@@ -87,9 +88,9 @@
 	</div>
 
 	<?php
-		require_once 'footer.php';
-		$footer = new Footer();
-		$footer->render();
+	require_once 'footer.php';
+	$footer = new Footer();
+	$footer->render();
 	?>
 
 	<script src="assets/script.js"></script>

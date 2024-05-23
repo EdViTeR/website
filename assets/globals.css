@@ -79,30 +79,52 @@ a {
 }
 
 @media screen and (max-width: 1400px) {
+	.centered-block {
+		margin-top: 200px;
+	}
+
 	.centered-block p {
 		font-size: 40px;
 	}
 }
 
 @media screen and (max-width: 1200px) {
+	.centered-block {
+		margin-top: 150px;
+	}
+
 	.centered-block p {
 		font-size: 32px;
 	}
 }
 
 @media screen and (max-width: 1000px) {
+	.centered-block {
+		margin-top: 100px;
+	}
+
 	.centered-block p {
 		font-size: 28px;
 	}
 }
 
 @media screen and (max-width: 840px) {
+	.centered-block {
+		margin-top: 50px;
+		height: 180px;
+	}
+
 	.centered-block p {
 		font-size: 20px;
 	}
 }
 
 @media screen and (max-width: 600px) {
+	.centered-block {
+		margin-top: 20px;
+		height: 120px;
+	}
+
 	.centered-block p {
 		font-size: 14px;
 	}

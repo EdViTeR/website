@@ -57,11 +57,11 @@ if (isset($_SESSION['user'])) {
         </form>
         <p class="redirect">Нет аккаунта? <a href="sign_up.php">Зарегистрируйтесь!</a></p>
     </main>
-    <div class="centered-block">
-        <div class="top-border"></div>
-        <p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
-        <div class="bottom-border"></div>
-    </div>
+    <?php
+    require_once '../quote.php';
+    $quote = new Quote();
+    $quote->render();
+    ?>
     <?php
     require_once '../footer.php';
     $footer = new Footer();

@@ -78,12 +78,16 @@
 	.right-block {
 		display: none;
 	}
+
+	.inner-block {
+		margin: 120px 20px 100px;
+	}
 }
 
 @media screen and (max-width: 720px) {
 	.generate-button {
 		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-		height: 64px;
+		/* height: 64px; */
 	}
 	.inner-block {
 		height: 440px;
@@ -104,7 +108,7 @@
 		font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
 	}
 	.inner-block {
-		height: 340px;
+		height: 380px;
 	}
 }
 
@@ -122,6 +126,7 @@
 
 .split-block {
 	display: flex; /* Размещаем дочерние элементы внутри flex-контейнера */
+	margin: 0 140px;
 }
 
 .left-half {
@@ -130,14 +135,16 @@
 }
 
 .right-half {
+	display: flex;
+	justify-content: right;
 	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-	padding: 20px; /* Добавляем отступы вокруг фотографии */
 	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+	object-fit: contain;
 }
 
 .right-half img {
-	max-width: 100%; /* Ширина изображения не превышает размер блока */
-	height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+	width: 100%;
+	height: auto;
 }
 
 .left-half-main {
@@ -147,11 +154,8 @@
 	line-height: 32px;
 	max-width: 600px;
 	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-	margin-top: 20px; /* Добавляем отступы вокруг текстового контента */
 	padding: 20px; /* Добавляем отступы вокруг текстового контента */
 	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
-	margin-right: 20px; /* Добавляем отступ справа */
-	margin-left: auto; /* Устанавливаем автоматический отступ слева */
 }
 
 .left-half-text {
@@ -159,16 +163,14 @@
 	text-align: left;
 	line-height: 32px;
 	max-width: 600px;
-	padding-right: 80px !important;
 	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
 	padding: 20px; /* Добавляем отступы вокруг текстового контента */
 	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
-	margin-right: 20px; /* Добавляем отступ справа */
-	margin-left: auto; /* Устанавливаем автоматический отступ слева */
+	text-align: justify;
 }
 
 .carousel-block {
-	margin-top: 100px;
+	margin-top: 120px;
 	margin-bottom: 200px;
 	margin-left: 200px;
 	overflow: hidden;
@@ -230,9 +232,9 @@
 }
 
 .carousel-item {
-	min-width: 600px;
+	min-width: fit-content;
+	max-width: 600px;
 	scroll-snap-align: start;
-	height: 400px;
 	background-color: #f6f6f6;
 	overflow: hidden; /* Добавляем свойство overflow: hidden; */
 	border-radius: 24px;
@@ -254,52 +256,54 @@
 	margin-bottom: 20px;
 }
 
+.item-content img {
+	max-width: 100%;
+	height: auto;
+}
+
 @media screen and (max-width: 768px) {
+	.left-half-text {
+		font-size: 24px;
+	}
+
 	.section {
 		flex-direction: column;
 		align-items: center;
 	}
 
 	.carousel-block {
-		margin-top: 20px; /* Уменьшаем отступ сверху на мобильных экранах */
+		margin-top: 40px; /* Уменьшаем отступ сверху на мобильных экранах */
+	}
+
+	.carousel-item {
+		margin-right: 12px;
 	}
 }
 
 @media screen and (max-width: 1000px) {
-	.split-block,
-	.carousel-block {
-		flex-direction: column; /* Устанавливаем направление flex колонкой */
-		margin-left: 36px;
+	.split-block {
+		margin: 0 36px;
 	}
 
 	.right-half {
 		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
 		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
-		margin-right: auto;
-	}
-
-	.left-half-main,
-	.carousel-block {
-		margin-left: 36px; /* Устанавливаем отступ слева */
-	}
-
-	.left-half-text,
-	.carousel {
-		margin-left: 36px; /* Устанавливаем отступ слева */
-		padding: 0px;
 	}
 }
 
 @media screen and (max-width: 1400px) {
-	.left-half-main,
-	.carousel-block {
-		margin-left: 36px; /* Устанавливаем отступ слева */
+	.split-block {
+		margin: 0 56px;
+		flex-direction: column;
+		align-items: center;
 	}
 
-	.left-half-text,
-	.carousel {
-		margin-left: 56px; /* Устанавливаем отступ слева */
-		padding: 0px;
+	.carousel-block {
+		margin: 100px 36px; /* Устанавливаем отступ слева */
+	}
+
+	.right-half {
+		margin-left: 20px;
 	}
 }
 

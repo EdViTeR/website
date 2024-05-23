@@ -62,11 +62,11 @@ $header->render();
         </form>
         <p class="redirect">Уже есть аккаунт? <a href="sign_in.php">Войти!</a></p>
     </main>
-    <div class="centered-block">
-        <div class="top-border"></div>
-        <p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
-        <div class="bottom-border"></div>
-    </div>
+    <?php
+    require_once '../quote.php';
+    $quote = new Quote();
+    $quote->render();
+    ?>
     </main>
     <?php
     require_once '../footer.php';
