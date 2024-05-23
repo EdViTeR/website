@@ -65,3 +65,27 @@ footer p {
 .social-group a:hover {
 	opacity: 0.5;
 }
+
+@media screen and (max-width: 1000px) {
+	footer h2 {
+		font-size: 18px;
+		text-align: left;
+	}
+
+	footer p {
+		font-size: 14px;
+	}
+
+	.contacts {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.group {
+		gap: 10px;
+	}
+
+	.col {
+		gap: 40px;
+	}
+}
