@@ -47,6 +47,7 @@ class Collections
 					<img class="collection-img" src="<?= $collection['picture'] ?>" alt="<?= $collection['title'] ?>">
 					<h2 class="collection-title"><?= $collection['title'] ?></h2>
 					<p class="collection-materials"><?= $collection['materials'] ?></p>
+					<p class="collection-name">ДОЛБАЕБ ДОЛБАЕБОВИЧ</p>
 					<div class="collection-border">
 					</div>
 				</div>

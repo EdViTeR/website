@@ -41,6 +41,12 @@ a {
 	/* height: 100vh; */
 }
 
+@media screen and (max-width: 1400px) {
+	.container {
+		margin: 120px 36px;
+	}
+}
+
 .centered-block {
 	margin-top: 250px; /* Отступ сверху на 200 пикселей */
 	width: 100%; /* Ширина блока по всей ширине страницы */
