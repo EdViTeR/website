@@ -25,3 +25,13 @@ function all_admin($dbo, $role) {
 	$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return $users;
 }
+
+function save_user_images($dbo, $way, $id) {
+	$data = [
+	    'way' => $way,
+	    'id' => $id,
+	];
+	$sql = "UPDATE user SET photo=:way WHERE id=:id";
+	$stmt= $dbo->prepare($sql);
+	$stmt->execute($data);
+}

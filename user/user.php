@@ -23,15 +23,15 @@
     ?>
 
     <div class="cabinet-container">
-        <!-- <a href="../logout.php" class="" type="submit">Выход</a> -->
 
         <h1 class="cabinet-title">Приветствуем вас, &lt;name&gt;!</h1>
-
+        <a href="../logout.php" class="" type="submit">Выход</a>
         <?php
         require_once '../generate-banner.php';
         $header = new Banner();
         $header->render();
         ?>
+        
 
     </div>
 
