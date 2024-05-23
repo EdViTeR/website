@@ -1,7 +1,3 @@
-.content-school {
-	margin: 120px 140px;
-}
-
 .content-school h1 {
 	font-size: 64px;
 	font-weight: 600;
@@ -19,9 +15,14 @@
 	gap: 90px;
 }
 
+.right-photo {
+	flex-direction: row-reverse;
+}
+
 .leader-photo {
 	object-fit: cover;
 	border-radius: 20px;
+	max-width: 500px;
 }
 
 .leader-info {
@@ -69,13 +70,30 @@
 
 @media screen and (max-width: 1400px) {
 	.content-school {
-		margin: 80px 24px;
+		margin: 80px 36px;
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.leader-card {
 		flex-direction: column;
+		gap: 40px;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.content-school h1 {
+		font-size: 48px;
+		text-align: center;
+	}
+
+	.leader-info {
 		gap: 20px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.content-school h1 {
+		font-size: 40px;
 	}
 }

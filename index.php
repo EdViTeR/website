@@ -12,9 +12,9 @@
 
 <body>
 	<?php
-		require_once 'header.php';
-		$header = new Header();
-		$header->render();
+	require_once 'header.php';
+	$header = new Header();
+	$header->render();
 	?>
 	<div class="content">
 		<!-- Здесь находится ваш текущий контент -->
@@ -49,11 +49,12 @@
 				<img src="assets/img/news.png" alt="Фотография" width="672" height="400">
 			</div>
 		</div>
-		<div class="centered-block">
-			<div class="top-border"></div>
-			<p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
-			<div class="bottom-border"></div>
-		</div>
+
+		<?php
+		require_once 'quote.php';
+		$quote = new Quote();
+		$quote->render();
+		?>
 	</div>
 
 	<div class="carousel-block">
@@ -61,19 +62,37 @@
 		<div class="carousel">
 			<div class="carousel-item">
 				<div class="item-content">
-					<p>Фамилия Имя Отчество</p>
+					<div class="item-content-title">
+						<p>Фамилия Имя Отчество</p>
+						<div class="item-content-rating">
+							<span class="item-content-rating-value">1</span>
+							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+						</div>
+					</div>
 					<img src="assets/img/news.png" alt="Изображение">
 				</div>
 			</div>
 			<div class="carousel-item">
 				<div class="item-content">
-					<p>Фамилия Имя Отчество</p>
+					<div class="item-content-title">
+						<p>Фамилия Имя Отчество</p>
+						<div class="item-content-rating">
+							<span class="item-content-rating-value">2</span>
+							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+						</div>
+					</div>
 					<img src="assets/img/news.png" alt="Изображение">
 				</div>
 			</div>
 			<div class="carousel-item">
 				<div class="item-content">
-					<p>Фамилия Имя Отчество</p>
+					<div class="item-content-title">
+						<p>Фамилия Имя Отчество</p>
+						<div class="item-content-rating">
+							<span class="item-content-rating-value">3</span>
+							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+						</div>
+					</div>
 					<img src="assets/img/news.png" alt="Изображение">
 				</div>
 			</div>
@@ -87,9 +106,9 @@
 	</div>
 
 	<?php
-		require_once 'footer.php';
-		$footer = new Footer();
-		$footer->render();
+	require_once 'footer.php';
+	$footer = new Footer();
+	$footer->render();
 	?>
 
 	<script src="assets/script.js"></script>

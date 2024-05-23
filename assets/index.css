@@ -22,7 +22,6 @@
 	height: 568px; /* Высота блока */
 	border-radius: 35px; /* Закругление углов на 35 пикселей */
 	position: relative; /* Относительное позиционирование для блока */
-	min-width: 380px;
 }
 
 .left-block {
@@ -42,7 +41,6 @@
 .generate-button {
 	display: inline-block;
 	width: 330px; /* Изменено на фиксированную ширину 330px */
-	min-width: 330px; /* Добавлено, чтобы сохранить минимальную ширину */
 	height: 72px;
 	background-color: #a1c3ff;
 	color: black;
@@ -65,49 +63,6 @@
 	color: #ffffff;
 }
 
-@media screen and (max-width: 1000px) {
-	.generate-button {
-		font-size: 20px; /* Уменьшаем размер шрифта на меньших экранах */
-	}
-}
-
-@media screen and (max-width: 840px) {
-	.generate-button {
-		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-	}
-	.right-block {
-		display: none;
-	}
-}
-
-@media screen and (max-width: 720px) {
-	.generate-button {
-		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-		height: 64px;
-	}
-	.inner-block {
-		height: 440px;
-	}
-}
-
-/* Медиа-запросы для адаптивности */
-@media screen and (max-width: 768px) {
-	.left-block {
-		font-size: 48px; /* Уменьшаем размер шрифта на маленьких экранах */
-		padding-left: 5%; /* Отступ слева в процентах */
-		padding-top: 5%; /* Отступ сверху в процентах */
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.left-block {
-		font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-	}
-	.inner-block {
-		height: 340px;
-	}
-}
-
 .right-block {
 	position: absolute; /* Абсолютное позиционирование */
 	top: 50%; /* Положение по вертикали - по центру */
@@ -122,6 +77,7 @@
 
 .split-block {
 	display: flex; /* Размещаем дочерние элементы внутри flex-контейнера */
+	margin: 0 140px;
 }
 
 .left-half {
@@ -130,14 +86,16 @@
 }
 
 .right-half {
+	display: flex;
+	justify-content: right;
 	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-	padding: 20px; /* Добавляем отступы вокруг фотографии */
 	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
+	object-fit: contain;
 }
 
 .right-half img {
-	max-width: 100%; /* Ширина изображения не превышает размер блока */
-	height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+	width: 100%;
+	height: auto;
 }
 
 .left-half-main {
@@ -147,11 +105,8 @@
 	line-height: 32px;
 	max-width: 600px;
 	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
-	margin-top: 20px; /* Добавляем отступы вокруг текстового контента */
 	padding: 20px; /* Добавляем отступы вокруг текстового контента */
 	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
-	margin-right: 20px; /* Добавляем отступ справа */
-	margin-left: auto; /* Устанавливаем автоматический отступ слева */
 }
 
 .left-half-text {
@@ -159,18 +114,16 @@
 	text-align: left;
 	line-height: 32px;
 	max-width: 600px;
-	padding-right: 80px !important;
 	flex: 1; /* Распределение пространства равномерно между дочерними элементами */
 	padding: 20px; /* Добавляем отступы вокруг текстового контента */
 	box-sizing: border-box; /* Учитываем отступы внутри размеров элемента */
-	margin-right: 20px; /* Добавляем отступ справа */
-	margin-left: auto; /* Устанавливаем автоматический отступ слева */
+	text-align: justify;
 }
 
 .carousel-block {
-	margin-top: 100px;
+	margin-top: 120px;
 	margin-bottom: 200px;
-	margin-left: 200px;
+	margin-left: 150px;
 	overflow: hidden;
 	position: relative;
 }
@@ -230,9 +183,9 @@
 }
 
 .carousel-item {
-	min-width: 600px;
+	min-width: fit-content;
+	max-width: 600px;
 	scroll-snap-align: start;
-	height: 400px;
 	background-color: #f6f6f6;
 	overflow: hidden; /* Добавляем свойство overflow: hidden; */
 	border-radius: 24px;
@@ -251,118 +204,118 @@
 
 .item-content p {
 	font-size: 18px;
+}
+
+.item-content img {
+	max-width: 100%;
+	height: auto;
+}
+
+.item-content-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
 	margin-bottom: 20px;
 }
 
+.item-content-rating {
+	display: flex;
+	align-items: flex-end;
+	gap: 2px;
+}
+
+.item-content-rating-value {
+	font-size: 24px;
+}
+
+@media screen and (max-width: 1400px) {
+	.split-block {
+		margin: 0 56px;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.right-half {
+		margin-left: 20px;
+	}
+
+	.left-half-text {
+		max-width: 800px;
+	}
+
+	.carousel-block {
+		margin-left: 56px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.split-block {
+		margin: 0 36px;
+	}
+
+	.right-half {
+		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
+		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
+	}
+
+	.generate-button {
+		font-size: 20px; /* Уменьшаем размер шрифта на меньших экранах */
+	}
+
+	.carousel-block {
+		margin-left: 36px;
+	}
+}
+
+@media screen and (max-width: 840px) {
+	.generate-button {
+		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+		margin-top: 50px;
+	}
+	.right-block {
+		display: none;
+	}
+
+	.left-block {
+		width: fit-content;
+		padding: 30px;
+		text-align: center;
+		font-size: 48px; /* Уменьшаем размер шрифта на маленьких экранах */
+	}
+
+	.inner-block {
+		margin: 120px 20px 100px;
+		height: 400px;
+	}
+
+	.carousel-block {
+		margin-left: 20px;
+	}
+}
+
 @media screen and (max-width: 768px) {
+	.left-half-text {
+		font-size: 24px;
+	}
+
 	.section {
 		flex-direction: column;
 		align-items: center;
 	}
 
 	.carousel-block {
-		margin-top: 20px; /* Уменьшаем отступ сверху на мобильных экранах */
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.split-block,
-	.carousel-block {
-		flex-direction: column; /* Устанавливаем направление flex колонкой */
-		margin-left: 36px;
+		margin-top: 40px; /* Уменьшаем отступ сверху на мобильных экранах */
 	}
 
-	.right-half {
-		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
-		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
-		margin-right: auto;
+	.carousel-item {
+		margin-right: 12px;
 	}
 
-	.left-half-main,
-	.carousel-block {
-		margin-left: 36px; /* Устанавливаем отступ слева */
+	.carousel-block h2 {
+		font-size: 42px;
+		text-align: center;
 	}
-
-	.left-half-text,
-	.carousel {
-		margin-left: 36px; /* Устанавливаем отступ слева */
-		padding: 0px;
-	}
-}
-
-@media screen and (max-width: 1400px) {
-	.left-half-main,
-	.carousel-block {
-		margin-left: 36px; /* Устанавливаем отступ слева */
-	}
-
-	.left-half-text,
-	.carousel {
-		margin-left: 56px; /* Устанавливаем отступ слева */
-		padding: 0px;
-	}
-}
-
-.content-school {
-	margin-top: 200px;
-	padding: 40px;
-	text-align: center;
-}
-
-.content-school h1 {
-	font-size: 64px;
-	font-weight: 400;
-}
-
-.leader {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: top;
-	margin: 40px 0;
-}
-
-.leader img {
-	max-width: 100%;
-	border-radius: 10px;
-}
-
-.leader-info {
-	max-width: 500px;
-	padding: 40px;
-	vertical-align: top;
-}
-
-.leader-info h2 {
-	text-align: left;
-	color: #a1c3ff;
-	vertical-align: top;
-	font-size: 48px;
-	font-weight: 400;
-	font-family: "Raleway", sans-serif;
-}
-
-.leader-info p {
-	text-align: left;
-	color: #000000;
-	vertical-align: top;
-	font-size: 26px;
-	font-weight: 400;
-	font-family: "Raleway", sans-serif;
-}
-
-.leader-info a {
-	display: inline-block;
-	padding: 20px 40px;
-	margin-top: 20px;
-	background-color: #d9eaff;
-	border-radius: 20px;
-	text-decoration: none;
-	color: #000;
-	font-weight: 400;
-	vertical-align: bottom !important;
-	font-size: 24px;
-	font-family: "Raleway", sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -374,5 +327,28 @@
 	}
 	.leader-info p {
 		text-align: center;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.generate-button {
+		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+	}
+
+	.inner-block {
+		margin: 100px 20px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.left-block {
+		font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+	}
+
+	.generate-button {
+		width: 200px;
+	}
+
+	.inner-block {
+		height: 350px;
 	}
 }
