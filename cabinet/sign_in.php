@@ -5,10 +5,13 @@ session_start();
 if (isset($_SESSION['user'])) {
     switch ($_SESSION['user']['role']) {
         case '1':
-            header("Location: user/user.php?user_id=$id"); //пользователь
+            header("Location: ../user/user.php"); //Пользователь
             break;
         case '2':
-            header("Location: admin/admin.php"); //админ
+            header("Location: ../head/user.php"); //руководитель
+            break;
+        case '5':
+            header("Location: ../admin/admin.php"); //админ
             break;
     }
 }
