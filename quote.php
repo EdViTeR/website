@@ -13,4 +13,4 @@ class Quote
 	}
 }
 ?>
-<link rel="stylesheet" href="/assets/footer.css">
+<link rel="stylesheet" href="/assets/globals.css">

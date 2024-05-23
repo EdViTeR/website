@@ -22,7 +22,6 @@
 	height: 568px; /* Высота блока */
 	border-radius: 35px; /* Закругление углов на 35 пикселей */
 	position: relative; /* Относительное позиционирование для блока */
-	min-width: 380px;
 }
 
 .left-block {
@@ -42,7 +41,6 @@
 .generate-button {
 	display: inline-block;
 	width: 330px; /* Изменено на фиксированную ширину 330px */
-	min-width: 330px; /* Добавлено, чтобы сохранить минимальную ширину */
 	height: 72px;
 	background-color: #a1c3ff;
 	color: black;
@@ -63,53 +61,6 @@
 		#ffaed8
 	); /* Изменяем цвет кнопки при наведении */
 	color: #ffffff;
-}
-
-@media screen and (max-width: 1000px) {
-	.generate-button {
-		font-size: 20px; /* Уменьшаем размер шрифта на меньших экранах */
-	}
-}
-
-@media screen and (max-width: 840px) {
-	.generate-button {
-		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-	}
-	.right-block {
-		display: none;
-	}
-
-	.inner-block {
-		margin: 120px 20px 100px;
-	}
-}
-
-@media screen and (max-width: 720px) {
-	.generate-button {
-		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-		/* height: 64px; */
-	}
-	.inner-block {
-		height: 440px;
-	}
-}
-
-/* Медиа-запросы для адаптивности */
-@media screen and (max-width: 768px) {
-	.left-block {
-		font-size: 48px; /* Уменьшаем размер шрифта на маленьких экранах */
-		padding-left: 5%; /* Отступ слева в процентах */
-		padding-top: 5%; /* Отступ сверху в процентах */
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.left-block {
-		font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
-	}
-	.inner-block {
-		height: 380px;
-	}
 }
 
 .right-block {
@@ -172,7 +123,7 @@
 .carousel-block {
 	margin-top: 120px;
 	margin-bottom: 200px;
-	margin-left: 200px;
+	margin-left: 150px;
 	overflow: hidden;
 	position: relative;
 }
@@ -261,52 +212,6 @@
 	height: auto;
 }
 
-@media screen and (max-width: 768px) {
-	.left-half-text {
-		font-size: 24px;
-	}
-
-	.section {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.carousel-block {
-		margin-top: 40px; /* Уменьшаем отступ сверху на мобильных экранах */
-	}
-
-	.carousel-item {
-		margin-right: 12px;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.split-block {
-		margin: 0 36px;
-	}
-
-	.right-half {
-		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
-		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
-	}
-}
-
-@media screen and (max-width: 1400px) {
-	.split-block {
-		margin: 0 56px;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.carousel-block {
-		margin: 100px 36px; /* Устанавливаем отступ слева */
-	}
-
-	.right-half {
-		margin-left: 20px;
-	}
-}
-
 .content-school {
 	margin-top: 200px;
 	padding: 40px;
@@ -369,6 +274,95 @@
 	font-family: "Raleway", sans-serif;
 }
 
+@media screen and (max-width: 1400px) {
+	.split-block {
+		margin: 0 56px;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.right-half {
+		margin-left: 20px;
+	}
+
+	.left-half-text {
+		max-width: 800px;
+	}
+
+	.carousel-block {
+		margin-left: 56px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.split-block {
+		margin: 0 36px;
+	}
+
+	.right-half {
+		order: 1; /* Устанавливаем порядок -1, чтобы правый блок шел под левым */
+		margin-top: 20px; /* Добавляем отступ сверху для правого блока */
+	}
+
+	.generate-button {
+		font-size: 20px; /* Уменьшаем размер шрифта на меньших экранах */
+	}
+
+	.carousel-block {
+		margin-left: 36px;
+	}
+}
+
+@media screen and (max-width: 840px) {
+	.generate-button {
+		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+		margin-top: 50px;
+	}
+	.right-block {
+		display: none;
+	}
+
+	.left-block {
+		width: fit-content;
+		padding: 30px;
+		text-align: center;
+		font-size: 48px; /* Уменьшаем размер шрифта на маленьких экранах */
+	}
+
+	.inner-block {
+		margin: 120px 20px 100px;
+		height: 400px;
+	}
+
+	.carousel-block {
+		margin-left: 20px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.left-half-text {
+		font-size: 24px;
+	}
+
+	.section {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.carousel-block {
+		margin-top: 40px; /* Уменьшаем отступ сверху на мобильных экранах */
+	}
+
+	.carousel-item {
+		margin-right: 12px;
+	}
+
+	.carousel-block h2 {
+		font-size: 42px;
+		text-align: center;
+	}
+}
+
 @media (max-width: 768px) {
 	.leader {
 		flex-direction: column;
@@ -378,5 +372,24 @@
 	}
 	.leader-info p {
 		text-align: center;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.generate-button {
+		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+	}
+}
+@media screen and (max-width: 480px) {
+	.left-block {
+		font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+	}
+
+	.generate-button {
+		width: 200px;
+	}
+
+	.inner-block {
+		height: 350px;
 	}
 }
