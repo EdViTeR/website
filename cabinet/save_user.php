@@ -5,11 +5,11 @@ require_once $root . '/database/connect.php';
 require_once $root . '/database/database.php';
 
 
-$name 			        = $_POST['name'];
+$login 			        = $_POST['login'];
 $email 			        = $_POST['email'];
 $repeate_password       = $_POST['repeat_password'];
 $password               = $_POST['password'];
-$user = user($dbo, $email);
+$user                   = user($dbo, $email);
 
 if (isset($user) && !empty($user)) {
     $_SESSION['message'] = 'Данный Email уже зарегистрирован!';
@@ -17,9 +17,9 @@ if (isset($user) && !empty($user)) {
 } else {
     if ($repeate_password === $password) {
         $password              = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $query = ("INSERT INTO `user` SET `name` = :name, `email` = :email, `password` = :password");
+        $query = ("INSERT INTO `user` SET `login` = :login, `email` = :email, `password` = :password");
         $params = [
-            'name'          => $name,
+            'login'          => $login,
             'email'         => $email,
             'password'      => $password,
         ];

@@ -12,12 +12,7 @@
         header("Location: sign_in.php");
     } else {
         if (password_verify($password, $user['password'])) {
-            $_SESSION['user'] = [
-                "id" => $user['id'],
-                "email" => $user['email'],
-                "name" => $user['name'],
-                "role" => $user['role'],
-            ];
+            $_SESSION['user'] = $user;
             switch ($user['role']) {
                 case '1':
                     header("Location: ../user/user.php"); //Пользователь
