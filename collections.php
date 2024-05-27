@@ -1,3 +1,8 @@
+<?php
+include "database/database.php";
+$ornament = all_ornament($dbo);
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
