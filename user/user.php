@@ -1,11 +1,12 @@
 <?php
     session_start();
+    include "../database/database.php";
     if (!isset($_SESSION['user'])) {
         header("Location: /");
     }
+    $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 ?>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,8 +35,12 @@
         
 
     </div>
-
-
+    //ВЫВОД ОРНАМЕНТОВ
+    <?php
+        foreach ($ornament as $key => $value) {
+            echo '<img src=' . $value['way'] . '><a href="delete_ornament.php?id=' . $value['id'] . '">УДАЛИТЬ</a>';
+        }
+    ?>
     <div class="centered-block">
         <div class="top-border"></div>
         <p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
