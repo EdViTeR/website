@@ -28,6 +28,8 @@
 			</button>
 		</form>
 
+		<h1 class="collections-main-title">Орнамент</h1>
+
 		<?php
 		require_once 'utils/collections-parse.php';
 		$collections = new Collections();

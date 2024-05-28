@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['user'])) {
-        header("Location: /");
-    }
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: /");
+}
 ?>
 <html lang="en">
 
@@ -22,7 +22,7 @@
     $header->render();
     ?>
 
-    <div class="cabinet-container">
+    <div class="container">
 
         <h1 class="cabinet-title">Приветствуем вас, &lt;name&gt;!</h1>
         <a href="../logout.php" class="" type="submit">Выход</a>
@@ -31,15 +31,15 @@
         $header = new Banner();
         $header->render();
         ?>
-        
 
-    </div>
+        <h1 class="collections-main-title">Ваши орнаменты</h1>
+        <?php
+        require_once '../utils/collections-parse-cabinet.php';
+        $collections = new Collections();
+        $collections->render();
+        ?>
 
 
-    <div class="centered-block">
-        <div class="top-border"></div>
-        <p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
-        <div class="bottom-border"></div>
     </div>
 
     <?php
