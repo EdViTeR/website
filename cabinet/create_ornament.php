@@ -30,9 +30,9 @@
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <input type="file" name="image"><br><br>
         <label for="name">Название</label>
-        <input id="name" type="text" name="name" />
+        <input id="name" type="text" name="name" required />
         <label for="materials">Материалы</label>
-        <input id="materials" type="text" name="materials" />
+        <input id="materials" type="text" name="materials" required/>
         <input type="submit" value="Отправить" />
     </form>
     <?php

@@ -75,3 +75,11 @@ function user_name_ornament($dbo, $user_id) {
 	$user = $stmt->fetch(PDO::FETCH_ASSOC);
 	return $user;
 }
+
+//получем пользователя по id для вывода имени на главной
+function ornament_review($dbo, $ornament_id) {
+	$stmt = $dbo->prepare("SELECT * FROM review WHERE `ornament_id` = ?");
+	$stmt->execute([$ornament_id]);
+	$review = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return $review;
+}
