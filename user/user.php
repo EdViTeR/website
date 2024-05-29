@@ -15,7 +15,7 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
     <link rel="stylesheet" href="../assets/globals.css">
     <link rel="stylesheet" href="../assets/cabinet.css">
     <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" href="..//assets/collections.css">
+    <link rel="stylesheet" href="../assets/collections.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 
     <div class="container">
 
-        <h1 class="cabinet-title">Приветствуем вас, &lt;name&gt;!</h1>
+        <h1 class="cabinet-title">Приветствуем вас, <?php echo $_SESSION['user']['name'] ?>!</h1>
         <a href="../logout.php" class="" type="submit">Выход</a>
         <?php
         require_once '../generate-banner.php';
@@ -36,7 +36,8 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
         if (isset($ornament) && ! empty($ornament)) {
             foreach ($ornament as $key => $value) {
                 echo '<h1 class="collections-main-title">Ваши орнаменты</h1>
-                    <div class="collections"><a href="ornament.php?id=' . $value['id'] . '"><div class="collection">
+                    <div class="collections">
+                    <a href="../cabinet/ornament.php?id=' . $value['id'] . '"><div class="collection">
                         <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
                         <div class="collection-title-container">
                             <h2 class="collection-title">' . $value['name'] . '</h2>

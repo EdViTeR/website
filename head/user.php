@@ -33,7 +33,8 @@
         if (isset($ornament) && ! empty($ornament)) {
             foreach ($ornament as $key => $value) {
                 echo '<h1 class="collections-main-title">Ваши орнаменты</h1>
-                    <div class="collections"><a href="ornament.php?id=' . $value['id'] . '"><div class="collection">
+                    <div class="collections">
+                    <a href="../cabinet/ornament.php?id=' . $value['id'] . '"><div class="collection">
                         <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
                         <div class="collection-title-container">
                             <h2 class="collection-title">' . $value['name'] . '</h2>
