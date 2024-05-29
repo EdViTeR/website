@@ -15,6 +15,7 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
     <link rel="stylesheet" href="../assets/globals.css">
     <link rel="stylesheet" href="../assets/cabinet.css">
     <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="..//assets/collections.css">
 </head>
 
 <body>
@@ -35,18 +36,26 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
         ?>
 
         <h1 class="collections-main-title">Ваши орнаменты</h1>
-        <?php
-        require_once '../utils/collections-parse.php';
-        $collections = new Collections();
-        $collections->render();
-        ?>
-
-        ВЫВОД ОРНАМЕНТОВ
+        <div class="collections">
         <?php
         foreach ($ornament as $key => $value) {
-            echo '<img src=' . $value['way'] . '><a href="delete_ornament.php?id=' . $value['id'] . '">УДАЛИТЬ</a>';
+            echo '<a href="ornament.php?id=' . $value['id'] . '"><div class="collection">
+                    <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
+                    <div class="collection-title-container">
+                        <h2 class="collection-title">' . $value['name'] . '</h2>
+                        <div class="collection-rating">
+                            <span class="collection-rating-value">' . $value['rating'] . '</span>
+                            <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+                        </div>
+                    </div>
+                    <p class="collection-materials">' . $value['materials'] . '</p>
+                    <p class="collection-name">ДОЛБАЕБ ДОЛБАЕБОВИЧ</p>
+                    <div class="collection-border">
+                    </div>
+                </div></a>';
         }
         ?>
+        </div>
     </div>
 
     <?php
