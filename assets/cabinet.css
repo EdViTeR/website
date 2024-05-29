@@ -50,6 +50,16 @@
 	border-color: #a1c3ff;
 }
 
+.message {
+	color: red;
+	font-size: 18px;
+}
+
+.access {
+	color: green;
+	font-size: 18px;
+}
+
 .redirect {
 	margin-top: 30px;
 	font-size: 18px;

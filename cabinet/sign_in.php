@@ -44,7 +44,6 @@ if (isset($_SESSION['user'])) {
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">Войти</button>
             <?php
             if (isset($_SESSION['access'])) {
                 echo '<p class="access">' . $_SESSION['access'] . '</p>';
@@ -54,6 +53,7 @@ if (isset($_SESSION['user'])) {
             unset($_SESSION['access']);
             unset($_SESSION['message']);
             ?>
+            <button type="submit">Войти</button>
         </form>
         <p class="redirect">Нет аккаунта? <a href="sign_up.php">Зарегистрируйтесь!</a></p>
     </main>
