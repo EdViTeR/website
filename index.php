@@ -1,3 +1,8 @@
+<?php
+include "database/database.php";
+$ornament = all_ornament($dbo);
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -60,42 +65,25 @@
 	<div class="carousel-block">
 		<h2>Рейтинг орнаментов</h2>
 		<div class="carousel">
-			<div class="carousel-item">
-				<div class="item-content">
-					<div class="item-content-title">
-						<p>Фамилия Имя Отчество</p>
-						<div class="item-content-rating">
-							<span class="item-content-rating-value">1</span>
-							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+			<?php
+				foreach ($ornament as $key => $value) {
+					$username = user_name_ornament($dbo, $value['user_id']);
+					echo '
+						<div class="carousel-item">
+							<div class="item-content">
+								<div class="item-content-title">
+									<p>' . $username['name'] . '</p>
+									<div class="item-content-rating">
+										<span class="item-content-rating-value">' . $value['rating'] .'</span>
+										<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
+									</div>
+								</div>
+								<img src="' . $value['way'] . '" alt="Изображение">
+							</div>
 						</div>
-					</div>
-					<img src="assets/img/news.png" alt="Изображение">
-				</div>
-			</div>
-			<div class="carousel-item">
-				<div class="item-content">
-					<div class="item-content-title">
-						<p>Фамилия Имя Отчество</p>
-						<div class="item-content-rating">
-							<span class="item-content-rating-value">2</span>
-							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
-						</div>
-					</div>
-					<img src="assets/img/news.png" alt="Изображение">
-				</div>
-			</div>
-			<div class="carousel-item">
-				<div class="item-content">
-					<div class="item-content-title">
-						<p>Фамилия Имя Отчество</p>
-						<div class="item-content-rating">
-							<span class="item-content-rating-value">3</span>
-							<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
-						</div>
-					</div>
-					<img src="assets/img/news.png" alt="Изображение">
-				</div>
-			</div>
+					';
+				}
+			?>
 			<!-- Дополнительные подблоки карусели -->
 		</div>
 

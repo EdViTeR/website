@@ -1,8 +1,10 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['user'])) {
-//     header("Location: /");
-// }
+    session_start();
+    include "../database/database.php";
+    if (!isset($_SESSION['user'])) {
+        header("Location: /");
+    }
+    $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 ?>
 <html lang="en">
 
@@ -23,7 +25,6 @@
     ?>
 
     <div class="container">
-
         <h1 class="cabinet-title">Приветствуем вас, &lt;name&gt;!</h1>
         <a href="../logout.php" class="" type="submit">Выход</a>
         <?php
@@ -39,8 +40,14 @@
         $collections->render();
         ?>
 
-
-    </div>
+        </div>
+        //ВЫВОД ОРНАМЕНТОВ
+        //<?php
+        //    foreach ($ornament as $key => $value) {
+        //        echo '<img src=' . $value['way'] . '><a href="delete_ornament.php?id=' . $value['id'] . '">УДАЛИТЬ</a>';
+        //    }
+        //?>
+        </div>
 
     <?php
     require_once '../footer.php';

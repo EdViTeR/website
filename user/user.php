@@ -1,11 +1,12 @@
 <?php
-session_start();
-if (!isset($_SESSION['user'])) {
-    header("Location: /");
-}
+    session_start();
+    include "../database/database.php";
+    if (!isset($_SESSION['user'])) {
+        header("Location: /");
+    }
+    $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 ?>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@ if (!isset($_SESSION['user'])) {
         $header = new Banner();
         $header->render();
         ?>
-
+      
         <h1 class="collections-main-title">Ваши орнаменты</h1>
         <?php
         require_once '../utils/collections-parse-cabinet.php';
@@ -39,7 +40,12 @@ if (!isset($_SESSION['user'])) {
         $collections->render();
         ?>
 
-
+        //ВЫВОД ОРНАМЕНТОВ
+        // <?php
+        //    foreach ($ornament as $key => $value) {
+        //        echo '<img src=' . $value['way'] . '><a href="delete_ornament.php?id=' . $value['id'] . '">УДАЛИТЬ</a>';
+        //    }
+        ?>
     </div>
 
     <?php
