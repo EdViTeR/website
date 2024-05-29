@@ -41,8 +41,8 @@ $ornament = view_ornament($dbo, $_GET['id']);
                     </div>
                     <div class="collection-border">
                     </div>
-                    <a href="delete_ornament.php" class="collection-name">Удалить орнамент</a>
                 </div>';
+                    // <a href="delete_ornament.php" class="collection-name">Удалить орнамент</a>
         ?>
         </div>
     </div>
