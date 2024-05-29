@@ -27,12 +27,14 @@ function all_admin($dbo, $role) {
 }
 
 // сохраняем орнамент по id пользователя
-function save_ornament($dbo, $way, $user_id) {
+function save_ornament($dbo, $way, $user_id, $name, $materials) {
 	$data = [
-	    'way' => $way,
-	    'user_id' => $user_id,
+	    'way' 			=> $way,
+	    'user_id' 		=> $user_id,
+	    'name' 			=> $name,
+	    'materials' 	=> $materials,
 	];
-	$sql = "INSERT INTO `ornament` SET `user_id` = :user_id, `way` = :way";
+	$sql = "INSERT INTO `ornament` SET `user_id` = :user_id, `way` = :way, `name` = :name, `materials` = :materials";
 	$stmt= $dbo->prepare($sql);
 	$stmt->execute($data);
 }

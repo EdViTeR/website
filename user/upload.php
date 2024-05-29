@@ -3,7 +3,9 @@ session_start();
 include ("../database/database.php");
 require_once '../database/connect.php';
 // Если в $_FILES существует "image" и она не NULL
-if (isset($_FILES['image'])) {
+if (isset($_FILES['image']) || isset($_POST['name']) || isset($_FILES['materials'])) {
+  $name = ($_POST['name']);
+  $materials = ($_POST['materials']);
   $image = $_FILES['image'];
   // Получаем нужные элементы массива "image"
   $fileTmpName = $_FILES['image']['tmp_name'];
@@ -35,7 +37,7 @@ if (isset($_FILES['image'])) {
         mkdir($folder, 0777, true);
       }
       move_uploaded_file($fileTmpName, $folder.$fileName);
-      save_ornament($dbo, $way, $_SESSION['user']['id']);
+      save_ornament($dbo, $way, $_SESSION['user']['id'], $name, $materials);
       header('Location: user.php');
   }
 };
