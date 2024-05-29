@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 class Banner
 {
 	public function render()

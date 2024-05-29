@@ -1,7 +1,6 @@
 <?php
 include "database/database.php";
 $ornament = all_ornament($dbo);
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -23,25 +22,59 @@ $ornament = all_ornament($dbo);
 	?>
 
 	<div class="container">
+		<h1 class="collections-main-title">Коллекция орнаментов</h1>
 		<form class="search" action="">
 			<div class="search-bar">
-				<input class="search-input" type="text" placeholder="Поиск по коллекциям">
-				<button class="search-open"><img src="assets/img/arrowdown.svg" alt=""></button>
+				<input class="search-input" type="text" placeholder="Поиск по авторам">
+				<!-- <button class="search-open"><img src="assets/img/arrowdown.svg" alt=""></button> -->
 			</div>
 			<button class="search-submit" type="submit">
 				<img src="assets/img/search-icon.svg" width="30" height="30" alt="Поиск...">
 			</button>
 		</form>
 
-		<h1 class="collections-main-title">Орнамент</h1>
-
-		<?php
-		require_once 'utils/collections-parse.php';
-		$collections = new Collections();
-		$collections->render();
-		?>
 	</div>
-
+        <?php
+        if (isset($ornament) && ! empty($ornament)) {
+        	echo '<div class="collections">';
+            foreach ($ornament as $key => $value) {
+            	$user_name = user_name_ornament($dbo, $value['user_id']);
+            	if ($_SESSION['user']['role'] == 2) {
+	                echo '<a href="/cabinet/ornament.php?id=' . $value['id'] . '"><div class="collection">
+                        <div class="collection">
+	                        <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
+	                        <div class="collection-title-container">
+	                            <h2 class="collection-title">' . $value['name'] . '</h2>
+	                            <div class="collection-rating">
+	                                <span class="collection-rating-value">' . $value['rating'] . '</span>
+	                                <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+	                            </div>
+	                        </div>
+	                        <p class="collection-materials">' . $value['materials'] . '</p>
+	                        <p class="collection-name">' . $user_name["name"] . '</p>
+	                        <div class="collection-border">
+	                        </div>
+	                    </div></div></a>';
+            	} else {
+	                echo '<div class="collection">
+	                        <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
+	                        <div class="collection-title-container">
+	                            <h2 class="collection-title">' . $value['name'] . '</h2>
+	                            <div class="collection-rating">
+	                                <span class="collection-rating-value">' . $value['rating'] . '</span>
+	                                <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+	                            </div>
+	                        </div>
+	                        <p class="collection-materials">' . $value['materials'] . '</p>
+	                        <p class="collection-name">' . $user_name["name"] . '</p>
+	                        <div class="collection-border">
+	                        </div>
+	                    </div>';
+	            }
+            	}
+        }
+        ?>
+    </div>
 	<?php
 	require_once 'quote.php';
 	$quote = new Quote();

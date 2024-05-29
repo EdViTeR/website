@@ -1,5 +1,4 @@
 <?php
-
 class Header
 {
 	public function render()
@@ -14,22 +13,40 @@ class Header
 			</div>
 			<nav class="nav">
 				<ul>
-					<li><a href="/school.php">ШКОЛА</a></li>
-					<li><a href="#">СТАТЬИ</a></li>
-					<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
-					<li><a href="/about.php">О ПРОЕКТЕ</a></li>
-					<li><a href="/cabinet/sign_in.php">КАБИНЕТ</a></li>
-				</ul>
-			</nav>
-			<div class="dropdown-menu">
-				<ul>
-					<li><a href="/school.php">ШКОЛА</a></li>
-					<li><a href="#">СТАТЬИ</a></li>
-					<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
-					<li><a href="/about.php">О ПРОЕКТЕ</a></li>
-					<li><a href="/cabinet/sign_in.php">КАБИНЕТ</a></li>
-				</ul>
-			</div>
+					<?php 
+					if (isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id'])) {
+						echo '<li><a href="/cabinet/user.php">ГЛАВНАЯ</a></li>
+								<li><a href="/school.php">ШКОЛА</a></li>
+								<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
+								<li><a href="/about.php">О ПРОЕКТЕ</a></li>
+								<li><a href="../logout.php">ВЫЙТИ</a></li>
+							</ul>
+						</nav>
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="/cabinet/user.php">ГЛАВНАЯ</a></li>
+								<li><a href="/school.php">ШКОЛА</a></li>
+								<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
+								<li><a href="/about.php">О ПРОЕКТЕ</a></li>
+								<li><a href="../logout.php">ВЫЙТИ</a></li>
+							</ul>
+						</div>';
+					} else {
+						echo '<li><a href="/school.php">ШКОЛА</a></li>
+								<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
+								<li><a href="/about.php">О ПРОЕКТЕ</a></li>
+								<li><a href="/cabinet/sign_in.php">КАБИНЕТ</a></li>
+							</ul>
+						</nav>
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="/school.php">ШКОЛА</a></li>
+								<li><a href="/collections.php">КОЛЛЕКЦИИ</a></li>
+								<li><a href="/about.php">О ПРОЕКТЕ</a></li>
+								<li><a href="/cabinet/sign_in.php">КАБИНЕТ</a></li>
+							</ul>
+						</div>';	
+					}?>
 		</header>
 <?php
 	}
