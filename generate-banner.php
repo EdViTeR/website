@@ -8,10 +8,7 @@ class Banner
 		<div class="inner-block">
 			<div class="left-block">
 				<p>Сгенерируйте собственное уникальное изображение</p>
-				<form action="upload.php" method="post" enctype="multipart/form-data">
-				  	<input type="file" name="image"><br><br>
-					<button type="submit" class="generate-button">ЗАГРУЗИТЬ</button>
-				</form>
+				<a class="generate-button" href="create_ornament.php">ЗАГРУЗИТЬ</a>
 			</div>
 			<div class="right-block">
 				<img src="/assets/img/img.png" alt="Your Image" width="575" height="500">

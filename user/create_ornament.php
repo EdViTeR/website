@@ -7,10 +7,11 @@
     $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 ?>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет</title>
+    <title>Личный кабинет руководителя</title>
     <link rel="stylesheet" href="../assets/globals.css">
     <link rel="stylesheet" href="../assets/cabinet.css">
     <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
@@ -22,32 +23,17 @@
     $header = new Header();
     $header->render();
     ?>
-
     <div class="container">
-
-        <h1 class="cabinet-title">Приветствуем вас, &lt;name&gt;!</h1>
+        <h1 class="cabinet-title">Приветствуем вас, <?php echo $_SESSION['user']['name'] ?>!</h1>
         <a href="../logout.php" class="" type="submit">Выход</a>
-        <?php
-        require_once '../generate-banner.php';
-        $header = new Banner();
-        $header->render();
-        ?>
-      
-        <h1 class="collections-main-title">Ваши орнаменты</h1>
-        <?php
-        require_once '../utils/collections-parse-cabinet.php';
-        $collections = new Collections();
-        $collections->render();
-        ?>
-
-        ВЫВОД ОРНАМЕНТОВ
-         <?php
-            foreach ($ornament as $key => $value) {
-                echo '<img src=' . $value['way'] . '><a href="delete_ornament.php?id=' . $value['id'] . '">УДАЛИТЬ</a>';
-         }
-        ?>
     </div>
-
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="image"><br><br>
+        <button type="submit" class="generate-button">ЗАГРУЗИТЬ</button>
+        <label for="GET-name">Название</label>
+        <input id="GET-name" type="text" name="name" />
+        <input type="submit" value="Save" />
+    </form>
     <?php
     require_once '../footer.php';
     $footer = new Footer();

@@ -36,3 +36,4 @@ class Header
 }
 ?>
 <link rel="stylesheet" href="/assets/header.css">
+<script src="../assets/script.js"></script>
