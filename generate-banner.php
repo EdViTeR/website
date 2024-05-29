@@ -13,7 +13,7 @@ class Banner
 				if (isset($_SESSION['user'])) {
 					echo '<a class="generate-button" href="create_ornament.php">ЗАГРУЗИТЬ</a>';
 				} else {
-					echo '<a class="generate-button" href="sign_in.php">ЗАГРУЗИТЬ</a>';
+					echo '<a class="generate-button" href="sign_in.php">Сгенерировать</a>';
 				}
 				?>
 			</div>
