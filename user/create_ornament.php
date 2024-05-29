@@ -30,9 +30,11 @@
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <input type="file" name="image"><br><br>
         <button type="submit" class="generate-button">ЗАГРУЗИТЬ</button>
-        <label for="GET-name">Название</label>
-        <input id="GET-name" type="text" name="name" />
-        <input type="submit" value="Save" />
+        <label for="name">Название</label>
+        <input id="name" type="text" name="name" />
+        <label for="materials">Материалы</label>
+        <input id="materials" type="text" name="materials" />
+        <input type="submit" value="Отправить" />
     </form>
     <?php
     require_once '../footer.php';
