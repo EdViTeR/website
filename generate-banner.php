@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Banner
 {
@@ -8,7 +9,13 @@ class Banner
 		<div class="inner-block">
 			<div class="left-block">
 				<p>Сгенерируйте собственное уникальное изображение</p>
-				<a class="generate-button" href="create_ornament.php">ЗАГРУЗИТЬ</a>
+				<?php
+				if (isset($_SESSION['user'])) {
+					echo '<a class="generate-button" href="create_ornament.php">ЗАГРУЗИТЬ</a>';
+				} else {
+					echo '<a class="generate-button" href="sign_in.php">ЗАГРУЗИТЬ</a>';
+				}
+				?>
 			</div>
 			<div class="right-block">
 				<img src="/assets/img/img.png" alt="Your Image" width="575" height="500">
