@@ -7,10 +7,11 @@
     $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 ?>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет</title>
+    <title>Личный кабинет руководителя</title>
     <link rel="stylesheet" href="../assets/globals.css">
     <link rel="stylesheet" href="../assets/cabinet.css">
     <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
@@ -23,8 +24,7 @@
     $header->render();
     ?>
 
-    <div class="cabinet-container">
-
+    <div class="container">
         <h1 class="cabinet-title">Приветствуем вас, &lt;name&gt;!</h1>
         <a href="../logout.php" class="" type="submit">Выход</a>
         <?php
@@ -32,20 +32,22 @@
         $header = new Banner();
         $header->render();
         ?>
-        
 
-    </div>
-    //ВЫВОД ОРНАМЕНТОВ
-    <?php
-        foreach ($ornament as $key => $value) {
-            echo '<img src=' . $value['way'] . '><a href="delete_ornament.php?id=' . $value['id'] . '">УДАЛИТЬ</a>';
-        }
-    ?>
-    <div class="centered-block">
-        <div class="top-border"></div>
-        <p>ЦИТАТА Н. П. БЕСЧАСТНОГО LOREM IPSUM DOLOR SIII</p>
-        <div class="bottom-border"></div>
-    </div>
+        <h1 class="collections-main-title">Орнаменты</h1>
+        <?php
+        require_once '../utils/collections-parse-cabinet.php';
+        $collections = new Collections();
+        $collections->render();
+        ?>
+
+        </div>
+        //ВЫВОД ОРНАМЕНТОВ
+        //<?php
+        //    foreach ($ornament as $key => $value) {
+        //        echo '<img src=' . $value['way'] . '><a href="delete_ornament.php?id=' . $value['id'] . '">УДАЛИТЬ</a>';
+        //    }
+        //?>
+        </div>
 
     <?php
     require_once '../footer.php';

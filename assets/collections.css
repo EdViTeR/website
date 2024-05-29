@@ -145,6 +145,70 @@
 	background-color: #000000;
 }
 
+.collection-title-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.collection-rating {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.collection-rating-value {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.collection-feedback {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.collection-feedback-item {
+	gap: 5px;
+	font-size: 18px;
+}
+
+.collection-feedback-item-title {
+	display: flex;
+	justify-content: space-between;
+}
+
+.collection-feedback-item-text {
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.collection-feedback-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.collection-feedback-form-rating {
+	display: flex;
+	gap: 10px;
+}
+
+.collection-feedback-form textarea {
+	width: 100%;
+	height: 100px;
+	font-size: 16px;
+	padding: 10px;
+	outline: none;
+	resize: none;
+}
+
+.collection-feedback-form button {
+	max-width: fit-content;
+	padding: 8px 18px;
+	margin: auto;
+}
+
 .collection-title,
 .collection-materials,
 .collection-name,
