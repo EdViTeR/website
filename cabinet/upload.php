@@ -38,6 +38,14 @@ if (isset($_FILES['image']) || isset($_POST['name']) || isset($_FILES['materials
       }
       move_uploaded_file($fileTmpName, $folder.$fileName);
       save_ornament($dbo, $way, $_SESSION['user']['id'], $name, $materials);
-      header('Location: user.php');
+      switch ($_SESSION['user']['role']) {
+        case '1':
+          header('Location: ../user/user.php');
+          break;
+        case '2':
+          header('Location: ../head/user.php');
+          break;
+      }
+      
   }
 };

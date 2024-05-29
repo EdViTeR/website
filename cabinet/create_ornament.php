@@ -29,7 +29,6 @@
     </div>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <input type="file" name="image"><br><br>
-        <button type="submit" class="generate-button">ЗАГРУЗИТЬ</button>
         <label for="name">Название</label>
         <input id="name" type="text" name="name" />
         <label for="materials">Материалы</label>
