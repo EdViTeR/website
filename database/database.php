@@ -46,6 +46,14 @@ function delete_ornament($dbo, $id) {
 	return $result;
 }
 
+// получаем один орнамент по id
+function view_ornament($dbo, $id) {
+	$stmt = $dbo->prepare("SELECT * FROM ornament WHERE `id` = ?");
+	$stmt->execute([$id]);
+	$ornament = $stmt->fetch(PDO::FETCH_ASSOC);
+	return $ornament;
+}
+
 // получаем орнаменты одного пользователя по id
 function user_ornament($dbo, $user_id) {
 	$stmt = $dbo->prepare("SELECT * FROM ornament WHERE `user_id` = ?");
