@@ -33,26 +33,24 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
         require_once '../generate-banner.php';
         $header = new Banner();
         $header->render();
-        ?>
-
-        <h1 class="collections-main-title">Ваши орнаменты</h1>
-        <div class="collections">
-        <?php
-        foreach ($ornament as $key => $value) {
-            echo '<a href="ornament.php?id=' . $value['id'] . '"><div class="collection">
-                    <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
-                    <div class="collection-title-container">
-                        <h2 class="collection-title">' . $value['name'] . '</h2>
-                        <div class="collection-rating">
-                            <span class="collection-rating-value">' . $value['rating'] . '</span>
-                            <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+        if (isset($ornament) && ! empty($ornament)) {
+            foreach ($ornament as $key => $value) {
+                echo '<h1 class="collections-main-title">Ваши орнаменты</h1>
+                    <div class="collections"><a href="ornament.php?id=' . $value['id'] . '"><div class="collection">
+                        <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
+                        <div class="collection-title-container">
+                            <h2 class="collection-title">' . $value['name'] . '</h2>
+                            <div class="collection-rating">
+                                <span class="collection-rating-value">' . $value['rating'] . '</span>
+                                <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+                            </div>
                         </div>
-                    </div>
-                    <p class="collection-materials">' . $value['materials'] . '</p>
-                    <p class="collection-name">ДОЛБАЕБ ДОЛБАЕБОВИЧ</p>
-                    <div class="collection-border">
-                    </div>
-                </div></a>';
+                        <p class="collection-materials">' . $value['materials'] . '</p>
+                        <p class="collection-name">ИМЯ</p>
+                        <div class="collection-border">
+                        </div>
+                    </div></a>';
+            }
         }
         ?>
         </div>
