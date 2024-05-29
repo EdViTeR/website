@@ -25,7 +25,7 @@
     ?>
 
     <div class="container">
-        <h1 class="cabinet-title">Приветствуем вас, &lt;name&gt;!</h1>
+        <h1 class="cabinet-title">Приветствуем вас, <?php echo $_SESSION['user']['name'] ?>!</h1>
         <a href="../logout.php" class="" type="submit">Выход</a>
         <?php
         require_once '../generate-banner.php';

@@ -5,7 +5,7 @@ require_once $root . '/database/connect.php';
 require_once $root . '/database/database.php';
 
 
-$login 			        = $_POST['login'];
+$name 			        = $_POST['name'];
 $email 			        = $_POST['email'];
 $repeate_password       = $_POST['repeat_password'];
 $password               = $_POST['password'];
@@ -17,9 +17,9 @@ if (isset($user) && !empty($user)) {
 } else {
     if ($repeate_password === $password) {
         $password              = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $query = ("INSERT INTO `user` SET `login` = :login, `email` = :email, `password` = :password");
+        $query = ("INSERT INTO `user` SET `name` = :name, `email` = :email, `password` = :password");
         $params = [
-            'login'          => $login,
+            'name'         => $name,
             'email'         => $email,
             'password'      => $password,
         ];

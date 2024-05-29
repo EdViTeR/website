@@ -34,8 +34,8 @@ $header->render();
         <div class="form-title">Регистрация</div>
         <form action="save_user.php" method="post">
             <div class="form-field">
-                <label for="login">Имя</label>
-                <input type="text" id="login" name="login" required>
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-field">
                 <label for="email">Почта</label>
