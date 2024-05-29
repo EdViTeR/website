@@ -13,16 +13,10 @@ if (!isset($user) || empty($user)) {
 } else {
     if (password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user;
-        switch ($user['role']) {
-            case '1':
-                header("Location: ../user/user.php"); //Пользователь
-                break;
-            case '2':
-                header("Location: ../head/user.php"); //руководитель
-                break;
-            case '5':
-                header("Location: ../admin/admin.php"); //админ
-                break;
+        if ($user['role'] == 5) {
+            header("Location: ../admin/admin.php");
+        } else {
+            header("Location: user.php");
         }
     } else {
         $_SESSION['message'] = 'Неверный логин или пароль';

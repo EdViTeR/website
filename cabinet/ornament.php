@@ -15,7 +15,7 @@ $ornament = view_ornament($dbo, $_GET['id']);
     <link rel="stylesheet" href="../assets/globals.css">
     <link rel="stylesheet" href="../assets/cabinet.css">
     <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" href="..//assets/collections.css">
+    <link rel="stylesheet" href="../assets/collections.css">
 </head>
 
 <body>
@@ -26,11 +26,10 @@ $ornament = view_ornament($dbo, $_GET['id']);
     ?>
 
     <div class="container">
-        <a href="../logout.php" class="" type="submit">Выход</a>
         <h1 class="collections-main-title">Орнамент <?php echo $ornament['name'] ?></h1>
         <div class="collections">
         <?php
-            echo '<a href="ornament.php?id=' . $ornament['id'] . '"><div class="collection">
+            echo '<div class="collection">
                     <img class="collection-img" src="' . $ornament['way'] . '" alt="' . $ornament['way'] . '">
                     <div class="collection-title-container">
                         <p class="collection-materials">' . $ornament['materials'] . '</p>
@@ -40,9 +39,10 @@ $ornament = view_ornament($dbo, $_GET['id']);
                         </div>
                     </div>
                     <div class="collection-border">
-                    </div>
-                </div>';
-                    // <a href="delete_ornament.php" class="collection-name">Удалить орнамент</a>
+                    </div></div>';
+            if ($ornament['user_id'] == $_SESSION['user']['id']) {
+                echo '<a href="delete_ornament.php?id=' . $ornament['id'] . '" class="collection-name">Удалить орнамент</a>';
+            }
         ?>
         </div>
     </div>
