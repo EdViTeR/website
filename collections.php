@@ -59,26 +59,28 @@ $ornament = all_ornament($dbo);
 						</div>
 						<div class="collection-materials-container">
 							<p class="collection-materials"><?php echo $value['materials']; ?></p>
-							<div class="collection-my-rating-container">
-								<label class="collection-my-rating-label">Оценка: </label>
-								<div class="collection-my-rating-stars">
-									<div class="collection-my-rating-icon" data-rating="1">
-										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-									</div>
-									<div class="collection-my-rating-icon" data-rating="2">
-										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-									</div>
-									<div class="collection-my-rating-icon" data-rating="3">
-										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-									</div>
-									<div class="collection-my-rating-icon" data-rating="4">
-										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-									</div>
-									<div class="collection-my-rating-icon" data-rating="5">
-										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+							<?php if ($_SESSION['user']['id'] != $value['user_id']) : ?>
+								<div class="collection-my-rating-container">
+									<label class="collection-my-rating-label">Оценка: </label>
+									<div class="collection-my-rating-stars">
+										<div class="collection-my-rating-icon" data-rating="1">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="2">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="3">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="4">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="5">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
 									</div>
 								</div>
-							</div>
+							<?php endif; ?>
 						</div>
 						<p class="collection-name"><?php echo $user_name["name"]; ?></p>
 						<p class="collection-name"><?php echo $date; ?></p>
