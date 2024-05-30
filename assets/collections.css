@@ -238,6 +238,15 @@
 		width: 100%;
 	}
 
+	.collection-img {
+		width: 350px;
+	}
+
+	.collection * {
+		max-width: 350px;
+		word-break: break-all;
+	}
+
 	.collection-title-container {
 		justify-content: space-between;
 	}
