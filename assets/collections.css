@@ -235,10 +235,11 @@
 
 	.collection {
 		text-align: center;
+		width: 100%;
 	}
 
 	.collection-title-container {
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 
 	.collections-main-title {
