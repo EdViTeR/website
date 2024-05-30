@@ -26,62 +26,84 @@ $ornament = view_ornament($dbo, $_GET['id']);
     ?>
 
     <div class="container">
-        <h1 class="collections-main-title">Орнамент <?php echo $ornament['name'] ?></h1>
+        <h1 class="collections-main-title">Орнамент <?= htmlspecialchars($ornament['name']) ?></h1>
         <div class="ornament">
             <?php
             $date = strstr($ornament['time'], ' ', true);
             $user_name = user_name_ornament($dbo, $ornament['user_id']);
-            echo '<div class="collection">
-                            <div class="collection">
-                                <img class="collection-img" src="' . $ornament['way'] . '" alt="' . $ornament['name'] . '">
-                                <div class="collection-title-container">
-                                    <h2 class="collection-title">' . $ornament['name'] . '</h2>
-                                    <div class="collection-rating">
-                                        <span class="collection-rating-value">' . $ornament['rating'] . '</span>
-                                        <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
-                                    </div>
-                                </div>
-                                <p class="collection-materials">' . $ornament['materials'] . '</p>
-                                <p class="collection-name">' . $user_name["name"] . '</p>
-                                <p class="collection-name">' . $date . '</p>
-                                <div class="collection-border">
-                                </div>
-                            </div>';
-            if ($ornament['user_id'] == $_SESSION['user']['id']) {
-                echo '<a href="delete_ornament.php?id=' . $ornament['id'] . '" class="collection-delete">Удалить орнамент</a>';
-            }
-            echo '</div>
-            <div  class="ornament-reviews">
-            <h2>Отзывы преподавателя</h2>';
-            $review = ornament_review($dbo, $ornament['id']);
-            if (!$review) {
-                echo '<p>Пока что отзывов нет</p>';
-            }
-            foreach ($review as $key => $value) {
-                $user = user_name_ornament($dbo, $value['head_id']);
-                $username = $user['name'];
-                $date = strstr($value['time'], ' ', true);
-
-                echo '<div class="review">
-                        <div class="review-header">
-                            <p class="review-name">' . $username . '</p>
-                            <p class="review-date">' . $date . '</p>
+            ?>
+            <div class="collection">
+                <div class="collection">
+                    <img class="collection-img" src="<?= htmlspecialchars($ornament['way']) ?>" alt="<?= htmlspecialchars($ornament['name']) ?>">
+                    <div class="collection-title-container">
+                        <h2 class="collection-title"><?= htmlspecialchars($ornament['name']) ?></h2>
+                        <div class="collection-rating">
+                            <span class="collection-rating-value"><?= htmlspecialchars($ornament['rating']) ?></span>
+                            <img class="collection-rating-icon" width="24" src="../assets/img/star-checked.svg" alt="Звезда">
                         </div>
-                        <p class="review-text">' . $value['text'] . '</p>
-                    </div>';
-            }
-
-            if ($_SESSION['user']['role'] == 2) {
-                echo '<form class="review-form" action="create_review.php?id=' . $ornament['id'] . '" method="post" enctype="multipart/form-data">
+                    </div>
+                    <div class="collection-materials-container">
+                        <p class="collection-materials"><?php echo $ornament['materials']; ?></p>
+                        <div class="collection-my-rating-container">
+                            <label class="collection-my-rating-label">Оценка: </label>
+                            <div class="collection-my-rating-stars">
+                                <div class="collection-my-rating-icon" data-rating="1">
+                                    <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+                                </div>
+                                <div class="collection-my-rating-icon" data-rating="2">
+                                    <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+                                </div>
+                                <div class="collection-my-rating-icon" data-rating="3">
+                                    <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+                                </div>
+                                <div class="collection-my-rating-icon" data-rating="4">
+                                    <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+                                </div>
+                                <div class="collection-my-rating-icon" data-rating="5">
+                                    <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="collection-name"><?= htmlspecialchars($user_name["name"]) ?></p>
+                    <p class="collection-name"><?= htmlspecialchars($date) ?></p>
+                    <div class="collection-border"></div>
+                </div>
+                <?php if ($ornament['user_id'] == $_SESSION['user']['id']) : ?>
+                    <a href="delete_ornament.php?id=<?= htmlspecialchars($ornament['id']) ?>" class="collection-delete">Удалить орнамент</a>
+                <?php endif; ?>
+            </div>
+            <div class="ornament-reviews">
+                <h2>Отзывы преподавателя</h2>
+                <?php
+                $review = ornament_review($dbo, $ornament['id']);
+                if (!$review) {
+                    echo '<p>Пока что отзывов нет</p>';
+                } else {
+                    foreach ($review as $value) {
+                        $user = user_name_ornament($dbo, $value['head_id']);
+                        $username = $user['name'];
+                        $date = strstr($value['time'], ' ', true);
+                ?>
+                        <div class="review">
+                            <div class="review-header">
+                                <p class="review-name"><?= htmlspecialchars($username) ?></p>
+                                <p class="review-date"><?= htmlspecialchars($date) ?></p>
+                            </div>
+                            <p class="review-text"><?= htmlspecialchars($value['text']) ?></p>
+                        </div>
+                    <?php
+                    }
+                }
+                if ($_SESSION['user']['role'] == 2) : ?>
+                    <form class="review-form" action="create_review.php?id=<?= htmlspecialchars($ornament['id']) ?>" method="post" enctype="multipart/form-data">
                         <label class="review-label" for="text">Оставить отзыв</label>
                         <textarea maxlength="200" class="review-input" id="reviewTextarea" type="text" name="text" required placeholder="Напишите отзыв"></textarea>
                         <span id="charCount">Осталось знаков: 200</span>
                         <input class="review-submit" type="submit" value="Отправить" />
-                    </form>';
-            }
-            echo '</div>';
-
-            ?>
+                    </form>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 
@@ -105,6 +127,7 @@ $ornament = view_ornament($dbo, $_GET['id']);
             charCount.textContent = `Осталось знаков: ${remainingChars}`;
         });
     </script>
+    <script src="../assets/star-rating.js"></script>
 </body>
 
 </html>

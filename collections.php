@@ -32,7 +32,6 @@ $ornament = all_ornament($dbo);
 				<img src="assets/img/search-icon.svg" width="30" height="30" alt="Поиск...">
 			</button>
 		</form>
-
 	</div>
 	<?php if (isset($ornament) && !empty($ornament)) : ?>
 		<div class="collections">
@@ -42,25 +41,53 @@ $ornament = all_ornament($dbo);
 				$user_name = user_name_ornament($dbo, $value['user_id']);
 				?>
 				<?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 2) : ?>
-					<a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>">
+
+					<div class="collection">
 						<div class="collection">
-							<div class="collection">
+							<a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>" class="collection-img-container">
 								<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
-								<div class="collection-title-container">
-									<h2 class="collection-title"><?php echo $value['name']; ?></h2>
-									<div class="collection-rating">
-										<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
-										<img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+							</a>
+							<div class="collection-title-container">
+								<h2 class="collection-title"><?php echo $value['name']; ?></h2>
+								<div class="collection-rating">
+									<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
+									<div class="collection-my-rating">
+										<div class="collection-my-rating-icon">
+											<img src="../assets/img/star-checked.svg" width="25" height alt="Star Icon">
+										</div>
 									</div>
 								</div>
+							</div>
+							<div class="collection-materials-container">
 								<p class="collection-materials"><?php echo $value['materials']; ?></p>
-								<p class="collection-name"><?php echo $user_name["name"]; ?></p>
-								<p class="collection-name"><?php echo $date; ?></p>
-								<div class="collection-border">
+								<div class="collection-my-rating-container">
+									<label class="collection-my-rating-label">Оценка: </label>
+									<div class="collection-my-rating-stars">
+										<div class="collection-my-rating-icon" data-rating="1">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="2">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="3">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="4">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+										<div class="collection-my-rating-icon" data-rating="5">
+											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+										</div>
+									</div>
 								</div>
 							</div>
+							<p class="collection-name"><?php echo $user_name["name"]; ?></p>
+							<p class="collection-name"><?php echo $date; ?></p>
+							<div class="collection-border">
+							</div>
 						</div>
-					</a>
+					</div>
+
 				<?php else : ?>
 					<div class="collection">
 						<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
@@ -68,7 +95,7 @@ $ornament = all_ornament($dbo);
 							<h2 class="collection-title"><?php echo $value['name']; ?></h2>
 							<div class="collection-rating">
 								<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
-								<img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+								<img class="collection-rating-icon" width="24" src="../assets/img/star-checked.svg" alt="Звезда">
 							</div>
 						</div>
 						<p class="collection-materials"><?php echo $value['materials']; ?></p>
@@ -95,6 +122,7 @@ $ornament = all_ornament($dbo);
 	$footer->render();
 	?>
 
+	<script src="assets/star-rating.js"></script>
 	<script src="assets/script.js"></script>
 </body>
 
