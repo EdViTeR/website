@@ -26,33 +26,39 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
     ?>
 
     <div class="container">
-
-        <h1 class="cabinet-title">Приветствуем вас, <?php echo $_SESSION['user']['name'] ?>!</h1>
-        <?php
-        require_once '../generate-banner.php';
-        $header = new Banner();
-        $header->render();
-        if (isset($ornament) && !empty($ornament)) {
-            echo '<h1 class="collections-main-title">Ваши орнаменты</h1>
-                    <div class="collections">';
-            foreach ($ornament as $key => $value) {
-                echo '<a class="collection" href="../cabinet/ornament.php?id=' . $value['id'] . '">
-                        <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
+        <h1 class="cabinet-title">Приветствуем вас, <?= htmlspecialchars($_SESSION['user']['name']) ?>!</h1>
+        <?php require_once '../generate-banner.php'; ?>
+        <?php $header = new Banner(); ?>
+        <?php $header->render(); ?>
+        <?php if (isset($ornament) && !empty($ornament)) : ?>
+            <h1 class="collections-main-title">Ваши орнаменты</h1>
+            <div class="collections">
+                <?php foreach ($ornament as $value) : ?>
+                    <div class="collection">
+                        <a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>" class="collection-img-container">
+                            <img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
+                        </a>
                         <div class="collection-title-container">
-                            <h2 class="collection-title">' . $value['name'] . '</h2>
+                            <h2 class="collection-title"><?php echo $value['name']; ?></h2>
                             <div class="collection-rating">
-                                <span class="collection-rating-value">' . $value['rating'] . '</span>
-                                <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+                                <span class="collection-rating-value"><?php echo $value['rating']; ?></span>
+                                <div class="collection-my-rating">
+                                    <div class="collection-my-rating-icon">
+                                        <img src="../assets/img/star-checked.svg" width="25" height alt="Star Icon">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p class="collection-materials">' . $value['materials'] . '</p>
+                        <div class="collection-materials-container">
+                            <p class="collection-materials"><?php echo $value['materials']; ?></p>
+                        </div>
+                        <p class="collection-name"><?php echo $value['time']; ?></p>
                         <div class="collection-border">
                         </div>
-                    </a>';
-            }
-        }
-        ?>
-    </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <?php

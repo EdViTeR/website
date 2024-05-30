@@ -43,48 +43,46 @@ $ornament = all_ornament($dbo);
 				<?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 2) : ?>
 
 					<div class="collection">
-						<div class="collection">
-							<a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>" class="collection-img-container">
-								<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
-							</a>
-							<div class="collection-title-container">
-								<h2 class="collection-title"><?php echo $value['name']; ?></h2>
-								<div class="collection-rating">
-									<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
-									<div class="collection-my-rating">
-										<div class="collection-my-rating-icon">
-											<img src="../assets/img/star-checked.svg" width="25" height alt="Star Icon">
-										</div>
+						<a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>" class="collection-img-container">
+							<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
+						</a>
+						<div class="collection-title-container">
+							<h2 class="collection-title"><?php echo $value['name']; ?></h2>
+							<div class="collection-rating">
+								<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
+								<div class="collection-my-rating">
+									<div class="collection-my-rating-icon">
+										<img src="../assets/img/star-checked.svg" width="25" height alt="Star Icon">
 									</div>
 								</div>
 							</div>
-							<div class="collection-materials-container">
-								<p class="collection-materials"><?php echo $value['materials']; ?></p>
-								<div class="collection-my-rating-container">
-									<label class="collection-my-rating-label">Оценка: </label>
-									<div class="collection-my-rating-stars">
-										<div class="collection-my-rating-icon" data-rating="1">
-											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-										</div>
-										<div class="collection-my-rating-icon" data-rating="2">
-											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-										</div>
-										<div class="collection-my-rating-icon" data-rating="3">
-											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-										</div>
-										<div class="collection-my-rating-icon" data-rating="4">
-											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-										</div>
-										<div class="collection-my-rating-icon" data-rating="5">
-											<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-										</div>
+						</div>
+						<div class="collection-materials-container">
+							<p class="collection-materials"><?php echo $value['materials']; ?></p>
+							<div class="collection-my-rating-container">
+								<label class="collection-my-rating-label">Оценка: </label>
+								<div class="collection-my-rating-stars">
+									<div class="collection-my-rating-icon" data-rating="1">
+										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+									</div>
+									<div class="collection-my-rating-icon" data-rating="2">
+										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+									</div>
+									<div class="collection-my-rating-icon" data-rating="3">
+										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+									</div>
+									<div class="collection-my-rating-icon" data-rating="4">
+										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+									</div>
+									<div class="collection-my-rating-icon" data-rating="5">
+										<img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
 									</div>
 								</div>
 							</div>
-							<p class="collection-name"><?php echo $user_name["name"]; ?></p>
-							<p class="collection-name"><?php echo $date; ?></p>
-							<div class="collection-border">
-							</div>
+						</div>
+						<p class="collection-name"><?php echo $user_name["name"]; ?></p>
+						<p class="collection-name"><?php echo $date; ?></p>
+						<div class="collection-border">
 						</div>
 					</div>
 
