@@ -1,0 +1,54 @@
+.create-ornament {
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	margin: auto;
+	margin-top: 50px;
+	gap: 20px;
+}
+
+.create-ornament-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.create-ornament-image {
+	display: none;
+}
+
+.create-ornament-input {
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+}
+
+.create-ornament-upload-button,
+.create-ornament-submit {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #a1c3ff;
+	color: #333;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.create-ornament-submit {
+	font-size: 24;
+	margin-top: 30px;
+}
+
+.create-ornament-upload-button:hover,
+.create-ornament-submit:hover {
+	background-image: linear-gradient(to right, #a1c3ff, #ffaed8);
+	color: white;
+}
+
+#selected-image {
+	max-width: 300px;
+	border-radius: 10px;
+}
