@@ -334,19 +334,26 @@
 @media screen and (max-width: 720px) {
 	.generate-button {
 		font-size: 18px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+		width: 250px;
 	}
 
 	.inner-block {
 		margin: 100px 20px;
 	}
+
+	.left-block {
+		font-size: 40px;
+	}
 }
 @media screen and (max-width: 480px) {
 	.left-block {
-		font-size: 36px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+		font-size: 28px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+		padding: 0;
+		padding-top: 40px;
 	}
 
 	.generate-button {
-		width: 200px;
+		width: 150px;
 	}
 
 	.inner-block {

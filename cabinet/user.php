@@ -32,11 +32,11 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
         require_once '../generate-banner.php';
         $header = new Banner();
         $header->render();
-        if (isset($ornament) && ! empty($ornament)) {
+        if (isset($ornament) && !empty($ornament)) {
             echo '<h1 class="collections-main-title">Ваши орнаменты</h1>
                     <div class="collections">';
             foreach ($ornament as $key => $value) {
-                echo '<a href="../cabinet/ornament.php?id=' . $value['id'] . '"><div class="collection">
+                echo '<a class="collection" href="../cabinet/ornament.php?id=' . $value['id'] . '">
                         <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
                         <div class="collection-title-container">
                             <h2 class="collection-title">' . $value['name'] . '</h2>
@@ -46,14 +46,15 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
                             </div>
                         </div>
                         <p class="collection-materials">' . $value['materials'] . '</p>
+                        // FIXME: Убрать заглушку
                         <p class="collection-name">ИМЯ</p>
                         <div class="collection-border">
                         </div>
-                    </div></a>';
+                    </a>';
             }
         }
         ?>
-        </div>
+    </div>
     </div>
 
     <?php

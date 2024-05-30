@@ -13,8 +13,9 @@ $ornament = view_ornament($dbo, $_GET['id']);
     <title>Личный кабинет</title>
     <link rel="stylesheet" href="../assets/globals.css">
     <link rel="stylesheet" href="../assets/cabinet.css">
-    <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="../assets/collections.css">
+    <link rel="stylesheet" href="../assets/ornament.css">
+    <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
 </head>
 
 <body>
@@ -26,8 +27,8 @@ $ornament = view_ornament($dbo, $_GET['id']);
 
     <div class="container">
         <h1 class="collections-main-title">Орнамент <?php echo $ornament['name'] ?></h1>
-        <div class="collections">
-        <?php
+        <div class="ornament">
+            <?php
             $date = strstr($ornament['time'], ' ', true);
             $user_name = user_name_ornament($dbo, $ornament['user_id']);
             echo '<div class="collection">
@@ -45,26 +46,42 @@ $ornament = view_ornament($dbo, $_GET['id']);
                                 <p class="collection-name">' . $date . '</p>
                                 <div class="collection-border">
                                 </div>
-                            </div>
-                        </div>';
+                            </div>';
+            if ($ornament['user_id'] == $_SESSION['user']['id']) {
+                echo '<a href="delete_ornament.php?id=' . $ornament['id'] . '" class="collection-delete">Удалить орнамент</a>';
+            }
+            echo '</div>
+            <div  class="ornament-reviews">
+            <h2>Отзывы преподавателя</h2>';
             $review = ornament_review($dbo, $ornament['id']);
+            if (!$review) {
+                echo '<p>Пока что отзывов нет</p>';
+            }
             foreach ($review as $key => $value) {
                 $user = user_name_ornament($dbo, $value['head_id']);
                 $username = $user['name'];
+                $date = strstr($value['time'], ' ', true);
 
-                echo $value['text'] . $username . '</br>';
+                echo '<div class="review">
+                        <div class="review-header">
+                            <p class="review-name">' . $username . '</p>
+                            <p class="review-date">' . $date . '</p>
+                        </div>
+                        <p class="review-text">' . $value['text'] . '</p>
+                    </div>';
             }
-            if ($ornament['user_id'] == $_SESSION['user']['id']) {
-                echo '<a href="delete_ornament.php?id=' . $ornament['id'] . '" class="collection-name">Удалить орнамент</a>';
-            }
+
             if ($_SESSION['user']['role'] == 2) {
-                echo '<form action="create_review.php?id=' . $ornament['id'] . '" method="post" enctype="multipart/form-data">
-                        <label for="text">Оставить отзыв</label>
-                        <input id="text" type="text" name="text" />
-                        <input type="submit" value="Отправить" />
+                echo '<form class="review-form" action="create_review.php?id=' . $ornament['id'] . '" method="post" enctype="multipart/form-data">
+                        <label class="review-label" for="text">Оставить отзыв</label>
+                        <textarea maxlength="200" class="review-input" id="reviewTextarea" type="text" name="text" required placeholder="Напишите отзыв"></textarea>
+                        <span id="charCount">Осталось знаков: 200</span>
+                        <input class="review-submit" type="submit" value="Отправить" />
                     </form>';
             }
-        ?>
+            echo '</div>';
+
+            ?>
         </div>
     </div>
 
@@ -73,6 +90,21 @@ $ornament = view_ornament($dbo, $_GET['id']);
     $footer = new Footer();
     $footer->render();
     ?>
+
+    <script>
+        const textarea = document.getElementById("reviewTextarea");
+        const charCount = document.getElementById('charCount');
+
+        textarea.addEventListener("input", function() {
+            this.style.height = "auto";
+            this.style.height = this.scrollHeight + "px";
+        });
+
+        textarea.addEventListener('input', () => {
+            const remainingChars = textarea.maxLength - textarea.value.length;
+            charCount.textContent = `Осталось знаков: ${remainingChars}`;
+        });
+    </script>
 </body>
 
 </html>
