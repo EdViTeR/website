@@ -47,7 +47,9 @@ $ornament = all_ornament($dbo);
 					Новости
 				</div>
 				<div class="left-half-text">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+						dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+						ea commodo consequat. </p>
 				</div>
 			</div>
 			<div class="right-half">
@@ -98,6 +100,7 @@ $ornament = all_ornament($dbo);
 	$footer = new Footer();
 	$footer->render();
 	?>
+
 
 	<script src="assets/script.js"></script>
 </body>

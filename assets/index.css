@@ -185,7 +185,6 @@
 
 .carousel-item {
 	min-width: fit-content;
-	max-width: 600px;
 	scroll-snap-align: start;
 	background-color: #f6f6f6;
 	overflow: hidden; /* Добавляем свойство overflow: hidden; */
@@ -193,14 +192,12 @@
 	margin-right: 36px;
 }
 
-.carousel-item img {
-	max-width: 100%; /* Устанавливаем максимальную ширину изображения на 100% */
-	height: auto;
-}
-
 .item-content {
+	display: flex;
+	flex-direction: column;
 	padding: 20px;
 	background-color: #f6f6f6;
+	width: 400px;
 }
 
 .item-content p {
@@ -208,8 +205,8 @@
 }
 
 .item-content img {
-	max-width: 100%;
-	height: auto;
+	max-height: 400px;
+	margin: auto;
 }
 
 .item-content-title {
@@ -358,5 +355,9 @@
 
 	.inner-block {
 		height: 350px;
+	}
+
+	.item-content {
+		width: 300px;
 	}
 }

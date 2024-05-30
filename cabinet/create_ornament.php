@@ -38,7 +38,7 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
             <div class="create-ornament-group">
                 <!-- <label class="create-ornament-label" for="image">Изображение</label> -->
                 <div class="custom-file-input">
-                    <button class="create-ornament-upload-button">Выбрать файл</button>
+                    <button class="create-ornament-upload-button" type="button">Выбрать файл</button>
                     <input class="create-ornament-image" type="file" name="image" style="display: none;">
                 </div>
                 <img id="selected-image" src="" alt="">
@@ -59,9 +59,11 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 
         createOrnamentUploadButton.addEventListener('click', () => {
             createOrnamentImage.click();
+            createOrnamentImage.dispatchEvent(new Event('change')); // Добавлено это
         });
 
-        createOrnamentImage.addEventListener('change', () => {
+        createOrnamentImage.addEventListener('change', (event) => {
+            event.preventDefault(); // Добавлено это
             const file = createOrnamentImage.files[0];
             if (file) {
                 const reader = new FileReader();

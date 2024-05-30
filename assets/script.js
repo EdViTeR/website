@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	let carouselPrev = document.querySelector(".carousel-control-prev");
 	let carouselNext = document.querySelector(".carousel-control-next");
+	let isManualScroll = false;
 
 	carouselPrev.addEventListener("click", function () {
 		// Move to the previous item
@@ -41,25 +42,25 @@ document.addEventListener("DOMContentLoaded", function () {
 			behavior: "smooth",
 		});
 	});
-});
 
-let carousel = document.querySelector(".carousel");
-let carouselItems = document.querySelectorAll(".carousel-item");
-let currentIndex = 0;
+	let carousel = document.querySelector(".carousel");
+	let carouselItems = document.querySelectorAll(".carousel-item");
+	let currentIndex = 0;
 
-function scrollToNextItem() {
-	if (currentIndex < carouselItems.length - 1) {
-		currentIndex++;
-	} else {
-		currentIndex = 0;
+	function scrollToNextItem() {
+		if (currentIndex < carouselItems.length - 1) {
+			currentIndex++;
+		} else {
+			currentIndex = 0;
+		}
+		carousel.scrollTo({
+			left: carouselItems[currentIndex].offsetLeft,
+			behavior: "smooth",
+		});
 	}
-	carousel.scrollTo({
-		left: carouselItems[currentIndex].offsetLeft,
-		behavior: "smooth",
-	});
-}
 
-setInterval(scrollToNextItem, 3000);
+	setInterval(scrollToNextItem, 3000);
+});
 
 // import { GUI } from 'https://cdn.skypack.dev/dat.gui'
 
