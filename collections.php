@@ -34,52 +34,55 @@ $ornament = all_ornament($dbo);
 		</form>
 
 	</div>
-        <?php
-        if (isset($ornament) && ! empty($ornament)) {
-        	echo '<div class="collections">';
-            foreach ($ornament as $key => $value) {
-            	$date = strstr($value['time'], ' ', true);
-            	$user_name = user_name_ornament($dbo, $value['user_id']);
-            	if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 2) {
-	                echo '<a href="/cabinet/ornament.php?id=' . $value['id'] . '">
-	                	<div class="collection">
-	                        <div class="collection">
-		                        <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
-		                        <div class="collection-title-container">
-		                            <h2 class="collection-title">' . $value['name'] . '</h2>
-		                            <div class="collection-rating">
-		                                <span class="collection-rating-value">' . $value['rating'] . '</span>
-		                                <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
-		                            </div>
-		                        </div>
-		                        <p class="collection-materials">' . $value['materials'] . '</p>
-		                        <p class="collection-name">' . $user_name["name"] . '</p>
-		                        <p class="collection-name">' . $date . '</p>
-		                        <div class="collection-border">
-		                        </div>
-		                    </div>
-	                    </div></a>';
-            	} else {
-	                echo '<div class="collection">
-	                        <img class="collection-img" src="' . $value['way'] . '" alt="' . $value['name'] . '">
-	                        <div class="collection-title-container">
-	                            <h2 class="collection-title">' . $value['name'] . '</h2>
-	                            <div class="collection-rating">
-	                                <span class="collection-rating-value">' . $value['rating'] . '</span>
-	                                <img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
-	                            </div>
-	                        </div>
-	                        <p class="collection-materials">' . $value['materials'] . '</p>
-	                        <p class="collection-name">' . $user_name["name"] . '</p>
-	                        <p class="collection-name">' . $date . '</p>
-	                        <div class="collection-border">
-	                        </div>
-	                    </div>';
-	            }
-            }
-        }
-        ?>
-    </div>
+	<?php if (isset($ornament) && !empty($ornament)) : ?>
+		<div class="collections">
+			<?php foreach ($ornament as $key => $value) : ?>
+				<?php
+				$date = strstr($value['time'], ' ', true);
+				$user_name = user_name_ornament($dbo, $value['user_id']);
+				?>
+				<?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 2) : ?>
+					<a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>">
+						<div class="collection">
+							<div class="collection">
+								<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
+								<div class="collection-title-container">
+									<h2 class="collection-title"><?php echo $value['name']; ?></h2>
+									<div class="collection-rating">
+										<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
+										<img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+									</div>
+								</div>
+								<p class="collection-materials"><?php echo $value['materials']; ?></p>
+								<p class="collection-name"><?php echo $user_name["name"]; ?></p>
+								<p class="collection-name"><?php echo $date; ?></p>
+								<div class="collection-border">
+								</div>
+							</div>
+						</div>
+					</a>
+				<?php else : ?>
+					<div class="collection">
+						<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
+						<div class="collection-title-container">
+							<h2 class="collection-title"><?php echo $value['name']; ?></h2>
+							<div class="collection-rating">
+								<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
+								<img class="collection-rating-icon" width="24" src="../assets/img/star.svg" alt="Звезда">
+							</div>
+						</div>
+						<p class="collection-materials"><?php echo $value['materials']; ?></p>
+						<p class="collection-name"><?php echo $user_name["name"]; ?></p>
+						<p class="collection-name"><?php echo $date; ?></p>
+						<div class="collection-border">
+						</div>
+					</div>
+				<?php endif; ?>
+			<?php endforeach; ?>
+		</div>
+	<?php endif; ?>
+	</div>
+
 	<?php
 	require_once 'quote.php';
 	$quote = new Quote();
