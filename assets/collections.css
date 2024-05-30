@@ -63,8 +63,7 @@
 	flex-direction: column;
 	gap: 20px;
 	cursor: pointer;
-	max-width: 600px;
-	width: 100%;
+	width: 600px;
 }
 
 .collection-title {
@@ -187,6 +186,7 @@
 
 	.collections {
 		grid-template-columns: repeat(1, 1fr);
+		width: 100%;
 	}
 
 	.collections-main-title {

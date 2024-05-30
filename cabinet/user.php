@@ -46,8 +46,6 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
                             </div>
                         </div>
                         <p class="collection-materials">' . $value['materials'] . '</p>
-                        // FIXME: Убрать заглушку
-                        <p class="collection-name">ИМЯ</p>
                         <div class="collection-border">
                         </div>
                     </a>';
