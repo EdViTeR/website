@@ -198,6 +198,7 @@
 	padding: 20px;
 	background-color: #f6f6f6;
 	width: 400px;
+	height: 100%;
 }
 
 .item-content p {
@@ -207,6 +208,7 @@
 .item-content img {
 	max-height: 400px;
 	margin: auto;
+	max-width: 400px;
 }
 
 .item-content-title {

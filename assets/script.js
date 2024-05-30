@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else {
 			currentIndex = carouselItems.length - 1; // Move to the last item if at the beginning
 		}
+		console.log(currentIndex);
 		carousel.scrollTo({
 			left: carouselItems[currentIndex].offsetLeft,
 			behavior: "smooth",
@@ -37,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else {
 			currentIndex = 0; // Move to the first item if at the end
 		}
+		console.log(currentIndex);
+
 		carousel.scrollTo({
 			left: carouselItems[currentIndex].offsetLeft,
 			behavior: "smooth",
@@ -53,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else {
 			currentIndex = 0;
 		}
+
 		carousel.scrollTo({
 			left: carouselItems[currentIndex].offsetLeft,
 			behavior: "smooth",
