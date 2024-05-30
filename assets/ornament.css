@@ -86,7 +86,13 @@
 }
 
 .review-submit {
-	
+	background-color: #a1c3ff;
+	border: none;
+}
+
+.review-submit:hover {
+	background-image: linear-gradient(to right, #a1c3ff, #ffaed8);
+	color: white;
 }
 
 @media screen and (max-width: 1200px) {
