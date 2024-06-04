@@ -1,17 +1,9 @@
 footer {
 	background-color: black;
 	color: white;
-	text-align: center;
+	text-align: left;
 	padding: 70px 55px 50px;
 	font-family: "Raleway", sans-serif;
-}
-
-.flex-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	gap: 5%;
-	box-sizing: border-box;
 }
 
 footer h2 {
@@ -19,17 +11,37 @@ footer h2 {
 	font-weight: 500;
 }
 
-.col {
-	display: flex;
-	flex-direction: column;
-	width: 50%;
-	gap: 100px;
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto auto;
+	column-gap: 10px;
+	row-gap: 40px;
+}
+
+.top-left,
+.top-middle {
+	grid-column: span 1;
+}
+
+.top-right,
+.bottom-right {
+	grid-column: span 2;
+}
+
+.bottom-left {
+	grid-column: span 2;
+}
+
+.phone-number {
+	/* font-size: 20px; */
 }
 
 .contacts {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	gap: 5%;
 }
 
 .group {
@@ -37,6 +49,7 @@ footer h2 {
 	flex-direction: column;
 	align-items: start;
 	gap: 20px;
+	max-width: max-content;
 }
 
 footer p {
@@ -67,9 +80,12 @@ footer p {
 }
 
 @media screen and (max-width: 1000px) {
+	footer {
+		padding: 50px 36px;
+	}
+
 	footer h2 {
 		font-size: 18px;
-		text-align: left;
 	}
 
 	footer p {
@@ -85,7 +101,41 @@ footer p {
 		gap: 10px;
 	}
 
-	.col {
-		gap: 40px;
+	.footer-grid {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+		row-gap: 20px;
+	}
+
+	.top-left,
+	.top-right,
+	.top-middle,
+	.bottom-left,
+	.bottom-right {
+		grid-column: span 1;
+	}
+
+	.top-left {
+		order: 1;
+	}
+
+	.top-right {
+		order: 2;
+		grid-row: span 2;
+	}
+
+	.top-middle {
+		order: 3;
+	}
+
+	.bottom-left {
+		order: 4;
+		grid-row-start: 3;
+	}
+
+	.bottom-right {
+		order: 5;
+		grid-row: span 2;
+		grid-row-start: 3;
 	}
 }
