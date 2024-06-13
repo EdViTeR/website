@@ -31,16 +31,17 @@
 	height: 80px;
 }
 
-.search-open {
+.search-clear {
 	right: 30px;
 	top: 50%;
 	transform: translateY(-50%);
 	position: absolute;
 	background-color: #f0f0f0;
-	width: 40px;
+	width: 20px;
+	height: 20px;
 }
 
-.search-open:hover {
+.search-clear:hover {
 	background-color: transparent;
 }
 
@@ -262,10 +263,6 @@
 
 	.search-input {
 		font-size: 16px;
-	}
-
-	.search-open img {
-		width: 20px;
 	}
 
 	.collection {
