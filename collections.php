@@ -1,6 +1,10 @@
 <?php
 include "database/database.php";
-$ornament = all_ornament($dbo);
+if (isset($_SESSION['search_ornaments']) && !empty($_SESSION['search_ornaments'])) {
+    $ornament  = $_SESSION['search_ornaments'];
+} else {
+	$ornament = all_ornament($dbo);
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -23,12 +27,13 @@ $ornament = all_ornament($dbo);
 
 	<div class="container">
 		<h1 class="collections-main-title">Коллекция орнаментов</h1>
-		<form class="search" action="">
+		<form method="POST" class="search" action="search_author.php">
 			<div class="search-bar">
-				<input class="search-input" type="text" placeholder="Поиск по авторам">
-				<!-- <button class="search-open"><img src="assets/img/arrowdown.svg" alt=""></button> -->
+				<label for="search-input" class="form-label"></label>
+				<input class="search-input" type="text" name="author" placeholder="Поиск по авторам" enctype="multipart/form-data">
+				<button class="search-open"><img src="assets/img/arrowdown.svg" alt=""></button>
 			</div>
-			<button class="search-submit" type="submit">
+			<button class="search-submit" type="submit" name="submit">
 				<img src="assets/img/search-icon.svg" width="30" height="30" alt="Поиск...">
 			</button>
 		</form>

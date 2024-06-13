@@ -83,3 +83,17 @@ function ornament_review($dbo, $ornament_id) {
 	$review = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return $review;
 }
+
+//Получаем автора по имени добавления автора
+function author_name($dbo, $name) {
+	$stmt = $dbo->prepare("SELECT * FROM user WHERE `name` = ?");
+	$stmt->execute([$name]);
+	$user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+	if (isset($user_data) && !empty($user_data)) {
+		$user_id = $user_data['id'];
+		$ornaments = user_ornament($dbo, $user_id);
+	} else {
+		$ornaments = '';
+	}
+	return $ornaments;
+}

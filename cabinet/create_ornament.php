@@ -11,7 +11,7 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет руководителя</title>
+    <title>Личный кабинет</title>
     <link rel="stylesheet" href="../assets/globals.css">
     <link rel="stylesheet" href="../assets/create-ornament.css">
     <link rel="stylesheet" href="../assets/cabinet.css">
@@ -25,7 +25,7 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
     $header->render();
     ?>
     <div class="container">
-        <h1 class="cabinet-title">Создание орнамента</h1>
+        <h1 class="cabinet-title">Загрузка орнамента</h1>
         <form class="create-ornament" action="upload.php" method="post" enctype="multipart/form-data">
             <div class="create-ornament-group"> <label class="create-ornament-name-label" for="name">Название</label>
                 <input class="create-ornament-input" id="name" type="text" name="name" required />
