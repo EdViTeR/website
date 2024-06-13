@@ -68,15 +68,15 @@ $ornament = all_ornament($dbo);
 		<h2>Рейтинг орнаментов</h2>
 		<div class="carousel">
 			<?php
-				foreach ($ornament as $key => $value) {
-					$username = user_name_ornament($dbo, $value['user_id']);
-					echo '
+			foreach ($ornament as $key => $value) {
+				$username = user_name_ornament($dbo, $value['user_id']);
+				echo '
 						<div class="carousel-item">
 							<div class="item-content">
 								<div class="item-content-title">
 									<p>' . $username['name'] . '</p>
 									<div class="item-content-rating">
-										<span class="item-content-rating-value">' . $value['rating'] .'</span>
+										<span class="item-content-rating-value">' . $value['rating'] . '</span>
 										<img class="item-content-rating-icon" width="24" src="assets/img/star.svg" alt="Звезда">
 									</div>
 								</div>
@@ -84,7 +84,7 @@ $ornament = all_ornament($dbo);
 							</div>
 						</div>
 					';
-				}
+			}
 			?>
 			<!-- Дополнительные подблоки карусели -->
 		</div>
