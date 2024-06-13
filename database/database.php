@@ -84,6 +84,26 @@ function ornament_review($dbo, $ornament_id) {
 	return $review;
 }
 
+//получем пользователя по id для вывода имени на главной
+function take_rating($dbo, $id) {
+	$stmt = $dbo->prepare("SELECT * FROM ornament WHERE `id` = ?");
+	$stmt->execute([$id]);
+	$rating = $stmt->fetch(PDO::FETCH_ASSOC);
+	return $rating;
+}
+
+//меняем оценку орнамента
+function change_rating($dbo, $rating, $id) {
+	$rating = [
+	    'rating' => $rating,
+	    'id' => $id,
+	];
+	$sql = "UPDATE ornament SET rating=:rating WHERE id=:id";
+	$stmt= $dbo->prepare($sql);
+	$stmt->execute($rating);
+	return $rating;
+}
+
 //Получаем автора по имени добавления автора
 function author_name($dbo, $name) {
 	$stmt = $dbo->prepare("SELECT * FROM user WHERE `name` = ?");

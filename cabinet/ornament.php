@@ -37,19 +37,20 @@ $ornament = view_ornament($dbo, $_GET['id']);
                     <img class="collection-img" src="<?= htmlspecialchars($ornament['way']) ?>" alt="<?= htmlspecialchars($ornament['name']) ?>">
                     <div class="collection-title-container">
                         <h2 class="collection-title"><?= htmlspecialchars($ornament['name']) ?></h2>
-                        <div class="collection-rating">
+                        <a href="add_rating.php?id=<?= $_GET['id'] ?>"><div class="collection-rating">
                             <span class="collection-rating-value"><?= htmlspecialchars($ornament['rating']) ?></span>
                             <img class="collection-rating-icon" width="24" src="../assets/img/star-checked.svg" alt="Звезда">
-                        </div>
+                        </div></a>
                     </div>
                     <div class="collection-materials-container">
                         <p class="collection-materials"><?php echo $ornament['materials']; ?></p>
                         <?php if ($_SESSION['user']['id'] != $ornament['user_id']) : ?>
-                            <div class="collection-my-rating-container">
+<!--                             <div class="collection-my-rating-container">
                                 <label class="collection-my-rating-label">Оценка: </label>
+                                <form action="add_rating.php" method="POST">
                                 <div class="collection-my-rating-stars">
                                     <div class="collection-my-rating-icon" data-rating="1">
-                                        <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
+                                        <img src="../assets/img/star.svg" name="rating_1" width="25" height="25" alt="Star Icon">
                                     </div>
                                     <div class="collection-my-rating-icon" data-rating="2">
                                         <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
@@ -64,7 +65,8 @@ $ornament = view_ornament($dbo, $_GET['id']);
                                         <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
                                     </div>
                                 </div>
-                            </div>
+                                </form>
+                            </div> -->
                         <?php endif; ?>
                     </div>
                     <p class="collection-name"><?= htmlspecialchars($user_name["name"]) ?></p>
@@ -80,7 +82,7 @@ $ornament = view_ornament($dbo, $_GET['id']);
                 <?php
                 $review = ornament_review($dbo, $ornament['id']);
                 if (!$review) {
-                    echo '<p>Пока что отзывов нет</p>';
+                    echo '<p>Пока отзывов нет</p>';
                 } else {
                     foreach ($review as $value) {
                         $user = user_name_ornament($dbo, $value['head_id']);
