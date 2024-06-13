@@ -31,7 +31,7 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
         <?php $header = new Banner(); ?>
         <?php $header->render(); ?>
         <?php if (isset($ornament) && !empty($ornament)) : ?>
-            <h1 class="collections-main-title">Ваши орнаменты</h1>
+            <h1 class="cabinet-collection-title">Ваши орнаменты</h1>
             <div class="collections">
                 <?php foreach ($ornament as $value) : ?>
                     <div class="collection">

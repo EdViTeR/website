@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	var toggle = document.querySelector(".nav-toggle");
 	var dropdownMenu = document.querySelector(".dropdown-menu");
 
-	toggle.addEventListener("click", function (event) {
+	toggle.addEventListener("click", function () {
 		dropdownMenu.classList.toggle("active");
 	});
 
