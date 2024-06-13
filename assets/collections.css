@@ -114,6 +114,15 @@
 	word-break: keep-all !important;
 }
 
+.collection-like {
+	padding: 10px 20px;
+	border-radius: 15px;
+}
+
+.collection-like:active {
+	transform: scale(0.95);
+}
+
 .collection-my-rating-stars {
 	display: flex;
 	flex-direction: row;
