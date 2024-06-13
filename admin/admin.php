@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 2) {
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 5) {
         header("Location: /");
     }
 ?>
@@ -21,11 +21,13 @@
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="../admin/admin.php" class="nav-link active">Главная</a></li>
         <li class="nav-item"><a href="../admin/users.php" class="nav-link">Пользователи</a></li>
-        <li class="nav-item"><a href="../admin/users.php" class="nav-link">Заказы</a></li>
+        <li class="nav-item"><a href="../admin/ornaments.php" class="nav-link">Орнаменты</a></li>
         <li class="nav-item"><a href="../admin/logout.php" class="nav-link">Выход</a></li>
     </ul>
 </header>
-
-<?php include('../assets/footer.php'); ?>
+<div class="container">
+    <h1>Панель администратора</h1></br></br>
+    <h3>Сервис для истинных руководителей школы орнамента</h3></br></br>
+</div>
 </body>
 </html>

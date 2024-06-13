@@ -18,6 +18,14 @@ function all_user($dbo, $role) {
 	return $users;
 }
 
+// получаем данные всех руководителей для админки
+function all_teacher($dbo, $role) {
+	$stmt = $dbo->prepare("SELECT * FROM user WHERE `role` = ?");
+	$stmt->execute([$role]);
+	$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return $users;
+}
+
 // получаем данные всех администраторов для админки
 function all_admin($dbo, $role) {
 	$stmt = $dbo->prepare("SELECT * FROM user WHERE `role` = ?");
@@ -42,6 +50,13 @@ function save_ornament($dbo, $way, $user_id, $name, $materials) {
 // удаляем орнамент по id
 function delete_ornament($dbo, $id) {
 	$sql = "DELETE FROM ornament WHERE id = $id";
+	$result = $dbo->query($sql);
+	return $result;
+}
+
+// удаляем пользователя по id
+function delete_user($dbo, $id) {
+	$sql = "DELETE FROM user WHERE id = $id";
 	$result = $dbo->query($sql);
 	return $result;
 }
@@ -102,6 +117,42 @@ function change_rating($dbo, $rating, $id) {
 	$stmt= $dbo->prepare($sql);
 	$stmt->execute($rating);
 	return $rating;
+}
+
+//меняем пароль пользователя
+function change_password($dbo, $id, $password) {
+	$data = [
+	    'password' => $password,
+	    'id' => $id,
+	];
+	$sql = "UPDATE user SET password=:password WHERE id=:id";
+	$stmt= $dbo->prepare($sql);
+	$stmt->execute($data);
+	return $data;
+}
+
+//добавляем админа
+function add_admin($dbo, $id, $role) {
+	$data = [
+	    'role' => $role,
+	    'id' => $id,
+	];
+	$sql = "UPDATE user SET role=:role WHERE id=:id";
+	$stmt= $dbo->prepare($sql);
+	$stmt->execute($data);
+	return $data;
+}
+
+//добавляем админа
+function delete_admin($dbo, $id, $role) {
+	$data = [
+	    'role' => $role,
+	    'id' => $id,
+	];
+	$sql = "UPDATE user SET role=:role WHERE id=:id";
+	$stmt= $dbo->prepare($sql);
+	$stmt->execute($data);
+	return $data;
 }
 
 //Получаем автора по имени добавления автора

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 2) {
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 5) {
         header("Location: /");
     }
     $root = $_SERVER['DOCUMENT_ROOT'];
@@ -8,7 +8,8 @@
     require_once $root . '/database/database.php';
 
     $users = all_user($dbo, 1);
-    $admin = all_admin($dbo, 2);
+    $teacher = all_teacher($dbo, 2);
+    $admin = all_admin($dbo, 5);
 ?>
 <html lang="ru">
 <head>
@@ -27,7 +28,7 @@
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="../admin/admin.php" class="nav-link">Главная</a></li>
         <li class="nav-item"><a href="../admin/users.php" class="nav-link active">Пользователи</a></li>
-        <li class="nav-item"><a href="../admin/orders.php" class="nav-link">Заказы</a></li>
+        <li class="nav-item"><a href="../admin/ornaments.php" class="nav-link">Орнаменты</a></li>
         <li class="nav-item"><a href="../admin/logout.php" class="nav-link">Выход</a></li>
     </ul>
 </header>
@@ -40,6 +41,7 @@
                 <th scope="col">Имя</th>
                 <th scope="col">Почта</th>
                 <th scope="col">Действие</th>
+                <th scope="col">Действие</th>
             </tr>
         </thead>
         <tbody>
@@ -48,12 +50,50 @@
         foreach ($admin as $key => $value) {
             $name = $value['name'];
             $email = $value['email'];
+            $id = $value['id'];
             $k++;
             echo '<tr>
                     <th scope="row">'. $k . '</th>
                     <td>'. $name . '</td>
                     <td>'. $email . '</td>
-                    <td>Посмотреть аккаунт</td>
+                    <td><a href=delete_admin.php?id=' . $id . '>Убрать из администраторов</a></td>
+                    <td><a href=delete_user.php?id=' . $id  . '>Удалить аккаунт</a></td>
+                </tr>';
+        }
+    ?>
+        </tbody>
+    </table></br>
+    <h3 class="text-center">Руководители</h3><hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Почта</th>
+                <th scope="col">Изменить пароль</th>
+                <th scope="col">Назначить администратором</th>
+                <th scope="col">Убрать из руководителей</th>
+                <th scope="col">Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+    <?php
+        $k = 0;
+        foreach ($teacher as $key => $value) {
+            $name = $value['name'];
+            $email = $value['email'];
+            $id = $value['id'];
+            $k++;
+            echo '<tr>
+                    <th scope="row">'. $k . '</th>
+                    <td>'. $name . '</td>
+                    <td>'. $email . '</td>
+                    <form action="change_password.php?id=' . $id . '" method="POST">
+                        <td><input type="password" id="password" name="password" required></td>
+                    </form>
+                    <td><a href=add_admin.php?id=' . $id . '>Назначить администратором</a></td>
+                    <td><a href=delete_admin.php?id=' . $id . '>Убрать из руководителей</a></td>
+                    <td><a href=delete_user.php?id=' . $id  . '>Удалить аккаунт</a></td>
                 </tr>';
         }
     ?>
@@ -66,6 +106,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Имя</th>
                 <th scope="col">Почта</th>
+                <th scope="col">Изменить пароль</th>
+                <th scope="col">Назначить руководителем</th>
                 <th scope="col">Действие</th>
             </tr>
         </thead>
@@ -75,12 +117,17 @@
         foreach ($users as $key => $value) {
             $name = $value['name'];
             $email = $value['email'];
+            $id = $value['id'];
             $k++;
             echo '<tr>
                     <th scope="row">'. $k . '</th>
                     <td>'. $name . '</td>
                     <td>'. $email . '</td>
-                    <td>Посмотреть аккаунт</td>
+                    <form action="change_password.php?id=' . $id . '" method="POST">
+                        <td><input type="password" id="password" name="password" required></td>
+                    </form>
+                    <td><a href=add_teacher.php?id=' . $id  . '>Назначить руководителем</a></td>
+                    <td><a href=delete_user.php?id=' . $id  . '>Удалить аккаунт</a></td>
                 </tr>';
         }
     ?>
