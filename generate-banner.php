@@ -11,7 +11,7 @@ class Banner
 				if (isset($_SESSION['user'])) {
 					echo '<a class="generate-button" href="../cabinet/create_ornament.php">ЗАГРУЗИТЬ</a>';
 				} else {
-					echo '<a class="generate-button" href="sign_in.php">Сгенерировать</a>';
+					echo '<a class="generate-button" href="cabinet/sign_in.php">Сгенерировать</a>';
 				}
 				?>
 			</div>

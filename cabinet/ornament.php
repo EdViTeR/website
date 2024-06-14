@@ -44,30 +44,6 @@ $ornament = view_ornament($dbo, $_GET['id']);
                     </div>
                     <div class="collection-materials-container">
                         <p class="collection-materials"><?php echo $ornament['materials']; ?></p>
-                        <?php if ($_SESSION['user']['id'] != $ornament['user_id']) : ?>
-<!--                             <div class="collection-my-rating-container">
-                                <label class="collection-my-rating-label">Оценка: </label>
-                                <form action="add_rating.php" method="POST">
-                                <div class="collection-my-rating-stars">
-                                    <div class="collection-my-rating-icon" data-rating="1">
-                                        <img src="../assets/img/star.svg" name="rating_1" width="25" height="25" alt="Star Icon">
-                                    </div>
-                                    <div class="collection-my-rating-icon" data-rating="2">
-                                        <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-                                    </div>
-                                    <div class="collection-my-rating-icon" data-rating="3">
-                                        <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-                                    </div>
-                                    <div class="collection-my-rating-icon" data-rating="4">
-                                        <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-                                    </div>
-                                    <div class="collection-my-rating-icon" data-rating="5">
-                                        <img src="../assets/img/star.svg" width="25" height="25" alt="Star Icon">
-                                    </div>
-                                </div>
-                                </form>
-                            </div> -->
-                        <?php endif; ?>
                     </div>
                     <p class="collection-name"><?= htmlspecialchars($user_name["name"]) ?></p>
                     <p class="collection-name"><?= htmlspecialchars($date) ?></p>

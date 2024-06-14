@@ -1,7 +1,6 @@
 <?php
 include "database/database.php";
 $ornament = all_ornament($dbo);
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -47,9 +46,7 @@ $ornament = all_ornament($dbo);
 					Новости
 				</div>
 				<div class="left-half-text">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-						ea commodo consequat. </p>
+					<p>рывь лолыь льыле коьлщы ьешлщьоы кшеш оыкьеш ыкьешщ ьыошкщеь шоыкеь шщыкзрьш щзьыкшщьо шыщкзь шощзыкь шеощзьыкшщеьшщцыкьошы кьшеозыькшщоьшщык.</p>
 				</div>
 			</div>
 			<div class="right-half">
@@ -63,15 +60,13 @@ $ornament = all_ornament($dbo);
 		$quote->render();
 		?>
 	</div>
-
 	<div class="carousel-block">
 		<h2>Рейтинг орнаментов</h2>
 		<div class="carousel">
 			<?php
 			foreach ($ornament as $key => $value) {
 				$username = user_name_ornament($dbo, $value['user_id']);
-				echo '
-						<div class="carousel-item">
+				echo '<div class="carousel-item">
 							<div class="item-content">
 								<div class="item-content-title">
 									<p>' . $username['name'] . '</p>

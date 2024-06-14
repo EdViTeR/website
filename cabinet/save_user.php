@@ -16,7 +16,7 @@ if (isset($user) && !empty($user)) {
     header("Location: sign_up.php");
 } else {
     if ($repeate_password === $password) {
-        $password              = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $query = ("INSERT INTO `user` SET `name` = :name, `email` = :email, `password` = :password");
         $params = [
             'name'         => $name,

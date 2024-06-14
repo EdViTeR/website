@@ -29,7 +29,7 @@
         <li class="nav-item"><a href="../admin/admin.php" class="nav-link">Главная</a></li>
         <li class="nav-item"><a href="../admin/users.php" class="nav-link active">Пользователи</a></li>
         <li class="nav-item"><a href="../admin/ornaments.php" class="nav-link">Орнаменты</a></li>
-        <li class="nav-item"><a href="../admin/logout.php" class="nav-link">Выход</a></li>
+        <li class="nav-item"><a href="../logout.php" class="nav-link">Выход</a></li>
     </ul>
 </header>
 <div class="container">

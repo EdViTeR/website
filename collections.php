@@ -31,7 +31,7 @@ if (isset($_SESSION['search_ornaments']) && !empty($_SESSION['search_ornaments']
 			<div class="search-bar">
 				<label for="search-input" class="form-label"></label>
 				<input class="search-input" type="text" name="author" placeholder="Поиск по авторам" enctype="multipart/form-data">
-				<button class="search-clear" type="button" onclick="clearInput()"><img src="assets/img/clear.svg" alt="clear" width="20" height="20"></button>
+				<a href="search_clear.php" class="search-clear" type="button" onclick="clearInput()"><img src="assets/img/clear.svg" alt="clear" width="20" height="20"></a>
 			</div>
 			<button class="search-submit" type="submit" name="submit">
 				<img src="assets/img/search-icon.svg" width="30" height="30" alt="Поиск...">

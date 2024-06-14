@@ -27,7 +27,7 @@ session_start();
 				<p>О проекте</p>
 			</div>
 			<div class="about-block-img">
-				<img src="/assets/img/img.png" alt="Your Image">
+				<img src="/assets/img/news.png" alt="Your Image">
 			</div>
 		</div>
 
@@ -47,7 +47,7 @@ session_start();
 				</div>
 			</div>
 			<div class="content-block">
-				<div class="content-picture"></div>
+				<div class="content-picture"><img src="assets/img/news.png"></div>
 			</div>
 			<div class="content-block">
 				<div class="content-picture"></div>
