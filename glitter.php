@@ -17,4 +17,4 @@ class Glitter
 }
 ?>
 <link rel="stylesheet" href="assets/glitter.css">
-<script src="assets/script.js"></script>
+<script src="assets/glitter.js"></script>
