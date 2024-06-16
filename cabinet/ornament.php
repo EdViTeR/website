@@ -40,17 +40,16 @@ $ornament = view_ornament($dbo, $_GET['id']);
                         <a href="add_rating.php?id=<?= $_GET['id'] ?>">
                             <div class="collection-rating">
                                 <span class="collection-rating-value"><?= htmlspecialchars($ornament['rating']) ?></span>
-                                <img class="collection-rating-icon" width="24" src="../assets/img/star-checked.svg" alt="Звезда">
+                                <div class="collection-my-rating-container">
+                                    <button class="collection-like collection-like-desktop">Нравится</button>
+                                    <button class="collection-like collection-like-mobile">♥</button>
+                                </div>
                             </div>
                         </a>
                     </div>
                     <div class="collection-materials-container">
                         <p class="collection-materials"><?php echo $ornament['materials']; ?></p>
                         <?php if ($_SESSION['user']['id'] != $ornament['user_id']) : ?>
-                            <div class="collection-my-rating-container">
-                                <button class="collection-like collection-like-desktop">Нравится</button>
-                                <button class="collection-like collection-like-mobile">♥</button>
-                            </div>
                         <?php endif; ?>
                     </div>
                     <p class="collection-name"><?= htmlspecialchars($user_name["name"]) ?></p>
