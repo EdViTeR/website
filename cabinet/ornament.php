@@ -37,10 +37,12 @@ $ornament = view_ornament($dbo, $_GET['id']);
                     <img class="collection-img" src="<?= htmlspecialchars($ornament['way']) ?>" alt="<?= htmlspecialchars($ornament['name']) ?>">
                     <div class="collection-title-container">
                         <h2 class="collection-title"><?= htmlspecialchars($ornament['name']) ?></h2>
-                        <a href="add_rating.php?id=<?= $_GET['id'] ?>"><div class="collection-rating">
-                            <span class="collection-rating-value"><?= htmlspecialchars($ornament['rating']) ?></span>
-                            <img class="collection-rating-icon" width="24" src="../assets/img/star-checked.svg" alt="Звезда">
-                        </div></a>
+                        <a href="add_rating.php?id=<?= $_GET['id'] ?>">
+                            <div class="collection-rating">
+                                <span class="collection-rating-value"><?= htmlspecialchars($ornament['rating']) ?></span>
+                                <img class="collection-rating-icon" width="24" src="../assets/img/star-checked.svg" alt="Звезда">
+                            </div>
+                        </a>
                     </div>
                     <div class="collection-materials-container">
                         <p class="collection-materials"><?php echo $ornament['materials']; ?></p>
@@ -108,6 +110,8 @@ $ornament = view_ornament($dbo, $_GET['id']);
         });
     </script>
     <script src="../assets/star-rating.js"></script>
+    <script src="../assets/script.js"></script>
+
 </body>
 
 </html>
