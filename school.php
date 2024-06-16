@@ -24,9 +24,9 @@ session_start();
         <h1>Наши руководители</h1>
         <div class="leaders">
             <div class="leader-card">
-                <img src="assets/img/photo_1.png" alt="Н.П. Бесчастнов" class="leader-photo">
+                <img src="assets/img/photo_1.png" alt="А.В. Фирсов" class="leader-photo">
                 <div class="leader-info">
-                    <div class="leader-name">Н.П. Бесчастнов</div>
+                    <div class="leader-name">А.В. Фирсов</div>
                     <p class="leader-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <button class="leader-button" href="#">ПЕРЕЙТИ В ПРОФИЛЬ</button>
                 </div>
@@ -36,7 +36,7 @@ session_start();
                 <div class="leader-info">
                     <div class="leader-name">А.Н. Новиков</div>
                     <p class="leader-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <button class="leader-button" href="#">ПЕРЕЙТИ К ЦИТАТАМ Н. П. БЕСЧАСТНОГО</button>
+                    <button class="leader-button" href="#">ПЕРЕЙТИ В ПРОФИЛЬ</button>
                 </div>
             </div>
         </div>
