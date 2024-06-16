@@ -37,7 +37,7 @@ $ornament = view_ornament($dbo, $_GET['id']);
                     <img class="collection-img" src="<?= htmlspecialchars($ornament['way']) ?>" alt="<?= htmlspecialchars($ornament['name']) ?>">
                     <div class="collection-title-container">
                         <h2 class="collection-title"><?= htmlspecialchars($ornament['name']) ?></h2>
-                        <a href="add_rating.php?id=<?= $_GET['id'] ?>">
+                        <a href="add_rating.php?id=<?= $_GET['id'] ?>&from=ornament">
                             <div class="collection-rating">
                                 <span class="collection-rating-value"><?= htmlspecialchars($ornament['rating']) ?></span>
                                 <div class="collection-my-rating-container">

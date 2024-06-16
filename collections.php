@@ -52,14 +52,15 @@ if (isset($_SESSION['search_ornaments']) && !empty($_SESSION['search_ornaments']
 						</a>
 						<div class="collection-title-container">
 							<h2 class="collection-title"><?php echo $value['name']; ?></h2>
-							<div class="collection-rating">
-								<span class="collection-rating-value"><?php echo $value['rating']; ?></span>
-								<div class="collection-my-rating">
-									<div class="collection-my-rating-icon">
-										<img src="../assets/img/star-checked.svg" width="25" height alt="Star Icon">
+							<a href="add_rating.php?id=<?= $value['id'] ?>">
+								<div class="collection-rating">
+									<span class="collection-rating-value"><?= htmlspecialchars($value['rating']) ?></span>
+									<div class="collection-my-rating-container">
+										<button class="collection-like collection-like-desktop">Нравится</button>
+										<button class="collection-like collection-like-mobile">♥</button>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 						<div class="collection-materials-container">
 							<p class="collection-materials"><?php echo $value['materials']; ?></p>
@@ -80,9 +81,15 @@ if (isset($_SESSION['search_ornaments']) && !empty($_SESSION['search_ornaments']
 						</a>
 						<div class="collection-title-container">
 							<h2 class="collection-title"><?php echo $value['name']; ?></h2>
-							<div class="collection-rating">
-								<span class="collection-rating-value"><?php echo $value['rating']; ?> ♥</span>
-							</div>
+							<a href="./cabinet/add_rating.php?id=<?= $value['id'] ?>&from=collections">
+								<div class="collection-rating">
+									<span class="collection-rating-value"><?= htmlspecialchars($value['rating']) ?></span>
+									<div class="collection-my-rating-container">
+										<button class="collection-like collection-like-desktop">Нравится</button>
+										<button class="collection-like collection-like-mobile">♥</button>
+									</div>
+								</div>
+							</a>
 						</div>
 						<div class="collection-materials-container">
 							<p class="collection-materials"><?php echo $value['materials']; ?></p>
