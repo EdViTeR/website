@@ -85,7 +85,14 @@ if (isset($_SESSION['search_ornaments']) && !empty($_SESSION['search_ornaments']
 								<img class="collection-rating-icon" width="24" src="../assets/img/star-checked.svg" alt="Звезда">
 							</div>
 						</div>
-						<p class="collection-materials"><?php echo $value['materials']; ?></p>
+						<div class="collection-materials-container">
+							<p class="collection-materials"><?php echo $value['materials']; ?></p>
+							<?php if ($_SESSION['user']['id'] != $value['user_id']) : ?>
+								<div class="collection-my-rating-container">
+									<button class="collection-like">Нравится</button>
+								</div>
+							<?php endif; ?>
+						</div>
 						<p class="collection-name"><?php echo $user_name["name"]; ?></p>
 						<p class="collection-name"><?php echo $date; ?></p>
 						<div class="collection-border"></div>
