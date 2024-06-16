@@ -74,6 +74,8 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
             }
         });
     </script>
+    <script src="assets/script.js"></script>
+
 </body>
 
 </html>
