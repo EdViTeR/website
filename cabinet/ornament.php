@@ -48,7 +48,8 @@ $ornament = view_ornament($dbo, $_GET['id']);
                         <p class="collection-materials"><?php echo $ornament['materials']; ?></p>
                         <?php if ($_SESSION['user']['id'] != $ornament['user_id']) : ?>
                             <div class="collection-my-rating-container">
-                                <button class="collection-like">Нравится</button>
+                                <button class="collection-like collection-like-desktop">Нравится</button>
+                                <button class="collection-like collection-like-mobile">♥</button>
                             </div>
                         <?php endif; ?>
                     </div>

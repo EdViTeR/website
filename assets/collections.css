@@ -120,6 +120,10 @@
 	border-radius: 15px;
 }
 
+.collection-like-mobile {
+	display: none;
+}
+
 .collection-like:active {
 	transform: scale(0.95);
 }
@@ -295,5 +299,13 @@
 
 	.collections-main-title {
 		font-size: 32px;
+	}
+
+	.collection-like-desktop {
+		display: none;
+	}
+
+	.collection-like-mobile {
+		display: block;
 	}
 }
