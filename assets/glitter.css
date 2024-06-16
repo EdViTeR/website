@@ -33,10 +33,10 @@
 }
 
 body {
-	display: grid;
+	/* display: grid;
 	place-items: center;
 	min-height: 100vh;
-	background: hsl(0 0% 10%);
+	background: hsl(0 0% 10%); */
 }
 
 .scene {

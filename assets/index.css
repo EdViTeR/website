@@ -8,6 +8,10 @@
 	z-index: 1; /* Устанавливаем блоку под шапкой z-index, чтобы он оставался под шапкой */
 }
 
+.content * {
+	border-radius: 32px;
+}
+
 .scene {
 	position: absolute;
 	top: calc(50% - 35px);
