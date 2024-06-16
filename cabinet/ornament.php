@@ -46,6 +46,11 @@ $ornament = view_ornament($dbo, $_GET['id']);
                     </div>
                     <div class="collection-materials-container">
                         <p class="collection-materials"><?php echo $ornament['materials']; ?></p>
+                        <?php if ($_SESSION['user']['id'] != $ornament['user_id']) : ?>
+                            <div class="collection-my-rating-container">
+                                <button class="collection-like">Нравится</button>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <p class="collection-name"><?= htmlspecialchars($user_name["name"]) ?></p>
                     <p class="collection-name"><?= htmlspecialchars($date) ?></p>
