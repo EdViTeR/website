@@ -66,6 +66,8 @@ $ornament = user_ornament($dbo, $_SESSION['user']['id']);
     $footer = new Footer();
     $footer->render();
     ?>
+
+    <script src="../assets/script.js"></script>
 </body>
 
 </html>
