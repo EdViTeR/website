@@ -22,13 +22,8 @@ session_start();
 	?>
 
 	<div class="container">
-		<div class="about-block">
-			<div class="about-block-title">
-				<p>О проекте</p>
-			</div>
-			<div class="about-block-img">
-				<img src="/assets/img/news.png" alt="Your Image">
-			</div>
+		<div class="about-header-block">
+			<div class="about-header-img"><img src="assets/img/about-header.png"></div>
 		</div>
 
 
@@ -47,16 +42,16 @@ session_start();
 				</div>
 			</div>
 			<div class="content-block">
-				<div class="content-picture"><img src="assets/img/news.png"></div>
+				<div class="content-picture"><img src="assets/img/about-1.png"></div>
 			</div>
 			<div class="content-block">
-				<div class="content-picture"></div>
+				<div class="content-picture"><img src="assets/img/about-2.png"></div>
 			</div>
 			<div class="content-block">
-				<div class="content-picture"></div>
+				<div class="content-picture"><img src="assets/img/about-3.png"></div>
 			</div>
 			<div class="content-block">
-				<div class="content-picture"></div>
+				<div class="content-picture"><img src="assets/img/about-4.png"></div>
 			</div>
 			<div class="content-block">
 				<div class="content-text-bold">
@@ -68,9 +63,7 @@ session_start();
 					великая память уникальных знаний </div>
 			</div>
 			<div class="content-wide-block">
-				<div class="content-text">
-					У нас можно ознакомиться с огромным цифровым архивом гениев текстильного орнамента, изучить научные работы и сгенерировать собственное оригинальное изображение в известных всему миру стилях.
-				</div>
+				<div class="about-footer-picture"><img src="assets/img/about-footer.png"></div>
 			</div>
 		</div>
 	</div>

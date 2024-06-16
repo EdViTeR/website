@@ -2,23 +2,22 @@ body {
 	background-color: #f0f0f0;
 }
 
-.about-block {
-	display: flex;
-	flex-direction: column;
-	gap: 50px;
-	align-items: center;
-	padding: 80px 55px;
-	height: 600px;
-	background-image: linear-gradient(to bottom right, #a1c3ff, #ffaed8);
+.about-header-block {
+	max-height: 600px;
 }
 
-.about-block-title {
+.about-header-img img {
+	width: 100%;
+	max-height: 600px;
+}
+
+.about-header .about-block-title {
 	font-weight: 600;
 	font-size: 64px;
 }
 
 .content-grid,
-.about-block {
+.about-header-block {
 	border-radius: 42px;
 }
 
@@ -34,7 +33,7 @@ body {
 .content-block,
 .content-wide-block {
 	border-radius: 30px;
-	height: 440px;
+	max-height: 440px;
 	display: flex;
 	flex-direction: column;
 }
@@ -61,11 +60,24 @@ body {
 	margin-bottom: 20px;
 }
 
-.content-picture {
-	background-color: #f0f0f0;
+.content-picture,
+.about-footer-picture {
 	border-radius: 30px;
-	width: 100%;
+	display: flex;
+	justify-content: center;
 	height: 100%;
+	box-sizing: content-box;
+}
+
+.content-picture img,
+.content-wide-block img {
+	object-fit: cover;
+	width: 100%;
+	border-radius: 30px;
+}
+
+.content-wide-block img {
+	max-height: 100%;
 }
 
 @media screen and (max-width: 1600px) {
@@ -90,7 +102,16 @@ body {
 	}
 
 	.content-picture {
-		height: 350px;
+		height: 500px;
+		width: 100%;
+	}
+
+	.content-picture img {
+		width: auto;
+	}
+
+	.about-footer-picture img {
+		width: 100%;
 	}
 }
 
@@ -111,22 +132,21 @@ body {
 		font-size: 36px;
 	}
 
-	.content-picture {
-		height: 250px;
+	.about-header-block img {
+		border-radius: 42px;
 	}
 }
 
 @media screen and (max-width: 760px) {
-	.about-block {
-		height: 350px;
+	.content-picture img,
+	.content-wide-block img {
+		object-fit: cover;
+		width: 100%;
+		border-radius: 30px;
 	}
 
-	.about-block-title {
-		font-size: 38px;
-	}
-
-	.about-block-img img {
-		max-width: 300px;
+	.content-picture {
+		height: 200px;
 	}
 }
 
@@ -144,7 +164,7 @@ body {
 	}
 
 	.content-picture {
-		height: 200px;
+		height: 150px;
 	}
 }
 
@@ -162,6 +182,6 @@ body {
 	}
 
 	.content-picture {
-		height: 150px;
+		height: 100px;
 	}
 }
