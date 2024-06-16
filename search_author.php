@@ -2,7 +2,7 @@
 session_start();
 include "database/database.php";
 if (isset($_POST) && !empty($_POST)) {
-	$name = strtolower($_POST["author"]);
+	$name = $_POST["author"];
 	$data = author_name($dbo, $name);
 
 	$_SESSION['search_ornaments'] = $data;
