@@ -2,16 +2,16 @@
 	position: relative; /* Относительное позиционирование */
 	width: 100%; /* Ширина блока равна ширине экрана */
 	height: 100vh; /* Высота блока - высота шапки */
-	background-image: url("img/content.png"); /* Устанавливаем изображение как фон блока */
-	background-size: cover; /* Масштабируем изображение так, чтобы оно полностью заполняло блок */
+	background-image: url("img/content.png");
+	background-size: cover;
 	background-position: center; /* Размещаем изображение по центру блока */
 	z-index: 1; /* Устанавливаем блоку под шапкой z-index, чтобы он оставался под шапкой */
 }
 
-.video-overlay {
+.scene {
 	position: absolute;
-	top: calc(50% - 30px);
-	left: calc(50% + 6px); /* Изменено значение left */
+	top: calc(50% - 35px);
+	left: calc(50% + 8px); /* Изменено значение left */
 	transform: translate(-50%, -50%);
 	z-index: 2;
 }

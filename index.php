@@ -20,20 +20,11 @@ $ornament = all_ornament($dbo);
 	$header = new Header();
 	$header->render();
 	?>
-	<div class="content">
-		<!-- Здесь находится ваш текущий контент -->
-		<div class="video-overlay">
-			<div class="scene">
-				<div class="backdrop"></div>
-				<div class="noise"></div>
-				<div class="dots"></div>
-				<div class="canvas"></div>
-			</div>
-			<!-- Здесь будет видео -->
-			<!-- <iframe width="464" height="500" src="https://www.youtube.com/embed/j6TwwXvwsKg?si=YG46TDxis9xbb_tP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-			<!-- <iframe width="416" height="466" src="https://www.youtube.com/embed/A7Od1umtdYs?si=rizJGWeSY5hdZQC1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-		</div>
-	</div>
+	<?php
+	require_once 'glitter.php';
+	$glitter = new Glitter();
+	$glitter->render();
+	?>
 	<div class="section">
 		<?php
 		require_once 'generate-banner.php';
