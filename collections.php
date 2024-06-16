@@ -84,18 +84,19 @@ if (isset($_SESSION['search_ornaments']) && !empty($_SESSION['search_ornaments']
 							<a href="./cabinet/add_rating.php?id=<?= $value['id'] ?>&from=collections">
 								<div class="collection-rating">
 									<span class="collection-rating-value"><?= htmlspecialchars($value['rating']) ?></span>
-									<div class="collection-my-rating-container">
-										<button class="collection-like collection-like-desktop">Нравится</button>
-										<button class="collection-like collection-like-mobile">♥</button>
-									</div>
+									<?php if ($_SESSION['user']['id'] != $value['user_id']) : ?>
+										<div class="collection-my-rating-container">
+											<button class="collection-like collection-like-desktop">Нравится</button>
+											<button class="collection-like collection-like-mobile">♥</button>
+										</div>
+									<?php else : ?>
+										<span style="font-size: 28px;">♥</span>
+									<?php endif; ?>
 								</div>
 							</a>
 						</div>
 						<div class="collection-materials-container">
 							<p class="collection-materials"><?php echo $value['materials']; ?></p>
-							<?php if ($_SESSION['user']['id'] != $value['user_id']) : ?>
-
-							<?php endif; ?>
 						</div>
 						<p class="collection-name"><?php echo $user_name["name"]; ?></p>
 						<p class="collection-name"><?php echo $date; ?></p>

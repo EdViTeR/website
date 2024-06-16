@@ -40,10 +40,14 @@ $ornament = view_ornament($dbo, $_GET['id']);
                         <a href="add_rating.php?id=<?= $_GET['id'] ?>&from=ornament">
                             <div class="collection-rating">
                                 <span class="collection-rating-value"><?= htmlspecialchars($ornament['rating']) ?></span>
-                                <div class="collection-my-rating-container">
-                                    <button class="collection-like collection-like-desktop">Нравится</button>
-                                    <button class="collection-like collection-like-mobile">♥</button>
-                                </div>
+                                <?php if ($_SESSION['user']['id'] != $ornament['user_id']) : ?>
+                                    <div class="collection-my-rating-container">
+                                        <button class="collection-like collection-like-desktop">Нравится</button>
+                                        <button class="collection-like collection-like-mobile">♥</button>
+                                    </div>
+                                <?php else : ?>
+                                    <span style="font-size: 28px;">♥</span>
+                                <?php endif; ?>
                             </div>
                         </a>
                     </div>
