@@ -64,67 +64,61 @@ if (isset($_SESSION['search_ornaments']) && !empty($_SESSION['search_ornaments']
 						</div>
 						<div class="collection-materials-container">
 							<p class="collection-materials"><?php echo $value['materials']; ?></p>
-							<?php if ($_SESSION['user']['id'] != $value['user_id']) : ?>
-								<div class="collection-my-rating-container">
-									<button class="collection-like">Нравится</button>
-								</div>
-							<?php endif; ?>
+							<p class="collection-name"><?php echo $user_name["name"]; ?></p>
+							<p class="collection-name"><?php echo $date; ?></p>
+							<div class="collection-border"></div>
 						</div>
-						<p class="collection-name"><?php echo $user_name["name"]; ?></p>
-						<p class="collection-name"><?php echo $date; ?></p>
-						<div class="collection-border"></div>
-					</div>
-				<?php else : ?>
-					<div class="collection">
-						<a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>" class="collection-img-container">
-							<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
-						</a>
-						<div class="collection-title-container">
-							<h2 class="collection-title"><?php echo $value['name']; ?></h2>
-							<a href="./cabinet/add_rating.php?id=<?= $value['id'] ?>&from=collections">
-								<div class="collection-rating">
-									<span class="collection-rating-value"><?= htmlspecialchars($value['rating']) ?></span>
-									<?php if ($_SESSION['user']['id'] != $value['user_id']) : ?>
-										<div class="collection-my-rating-container">
-											<button class="collection-like collection-like-desktop">Нравится</button>
-											<button class="collection-like collection-like-mobile">♥</button>
-										</div>
-									<?php else : ?>
-										<span style="font-size: 28px;">♥</span>
-									<?php endif; ?>
-								</div>
+					<?php else : ?>
+						<div class="collection">
+							<a href="/cabinet/ornament.php?id=<?php echo $value['id']; ?>" class="collection-img-container">
+								<img class="collection-img" src="<?php echo $value['way']; ?>" alt="<?php echo $value['name']; ?>">
 							</a>
+							<div class="collection-title-container">
+								<h2 class="collection-title"><?php echo $value['name']; ?></h2>
+								<a href="./cabinet/add_rating.php?id=<?= $value['id'] ?>&from=collections">
+									<div class="collection-rating">
+										<span class="collection-rating-value"><?= htmlspecialchars($value['rating']) ?></span>
+										<?php if ($_SESSION['user']['id'] != $value['user_id']) : ?>
+											<div class="collection-my-rating-container">
+												<button class="collection-like collection-like-desktop">Нравится</button>
+												<button class="collection-like collection-like-mobile">♥</button>
+											</div>
+										<?php else : ?>
+											<span style="font-size: 28px;">♥</span>
+										<?php endif; ?>
+									</div>
+								</a>
+							</div>
+							<div class="collection-materials-container">
+								<p class="collection-materials"><?php echo $value['materials']; ?></p>
+							</div>
+							<p class="collection-name"><?php echo $user_name["name"]; ?></p>
+							<p class="collection-name"><?php echo $date; ?></p>
+							<div class="collection-border"></div>
 						</div>
-						<div class="collection-materials-container">
-							<p class="collection-materials"><?php echo $value['materials']; ?></p>
-						</div>
-						<p class="collection-name"><?php echo $user_name["name"]; ?></p>
-						<p class="collection-name"><?php echo $date; ?></p>
-						<div class="collection-border"></div>
+					<?php endif; ?>
+				<?php endforeach; ?>
 					</div>
 				<?php endif; ?>
-			<?php endforeach; ?>
 		</div>
-	<?php endif; ?>
-	</div>
-	<?php
-	require_once 'quote.php';
-	$quote = new Quote();
-	$quote->render();
-	?>
-	<?php
-	require_once 'footer.php';
-	$footer = new Footer();
-	$footer->render();
-	?>
+		<?php
+		require_once 'quote.php';
+		$quote = new Quote();
+		$quote->render();
+		?>
+		<?php
+		require_once 'footer.php';
+		$footer = new Footer();
+		$footer->render();
+		?>
 
-	<script src="assets/star-rating.js"></script>
-	<script src="assets/script.js"></script>
-	<script>
-		function clearInput() {
-			document.querySelector('.search-input').value = '';
-		}
-	</script>
+		<script src="assets/star-rating.js"></script>
+		<script src="assets/script.js"></script>
+		<script>
+			function clearInput() {
+				document.querySelector('.search-input').value = '';
+			}
+		</script>
 
 </body>
 
