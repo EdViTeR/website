@@ -178,12 +178,14 @@ function author_name($dbo, $name)
 	$nameLower = strtolower($name);
 	$stmt = $dbo->prepare("SELECT * FROM user WHERE LOWER(`name`) LIKE ?");
 	$stmt->execute(["%" . $nameLower . "%"]);
-	$user_data = $stmt->fetch(PDO::FETCH_ASSOC);
-	if (isset($user_data) && !empty($user_data)) {
-		$user_id = $user_data['id'];
-		$ornaments = user_ornament($dbo, $user_id);
-	} else {
-		$ornaments = '';
+	$users_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$allOrnaments = array();
+	if (!empty($users_data)) {
+		foreach ($users_data as $user_data) {
+			$user_id = $user_data['id'];
+			$ornaments = user_ornament($dbo, $user_id);
+			$allOrnaments = array_merge($allOrnaments, $ornaments);
+		}
 	}
-	return $ornaments;
+	return $allOrnaments;
 }
